@@ -74,8 +74,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Vn-z8-f4i">
+                                <rect key="frame" x="16" y="44" width="22" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backpressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="Am7-Dh-yF1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="H32-2W-1oe">
+                                <rect key="frame" x="72" y="76" width="230" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Category" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="irf-8o-uJW">
+                                <rect key="frame" x="19" y="384" width="337" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="vrc-lk-Hhg">
+                                <rect key="frame" x="72" y="88" width="230" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="UPLOAD PHOTO"/>
+                                <connections>
+                                    <action selector="uploadButtonPressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="RBi-ka-799"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" id="I7z-da-KSe">
+                                <rect key="frame" x="19" y="508" width="333" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="c3B-Xl-HdL">
-                                <rect key="frame" x="141" y="508" width="92" height="34"/>
+                                <rect key="frame" x="139" y="711" width="92" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add">
@@ -93,42 +129,6 @@
                                     <action selector="addButtonPressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="wKh-5f-n3C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Vn-z8-f4i">
-                                <rect key="frame" x="16" y="44" width="22" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back"/>
-                                <connections>
-                                    <action selector="backpressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="Am7-Dh-yF1"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="H32-2W-1oe">
-                                <rect key="frame" x="72" y="76" width="230" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD DESCRIPTION BOX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8BB-wb-0D9">
-                                <rect key="frame" x="90" y="618" width="187" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Category" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="irf-8o-uJW">
-                                <rect key="frame" x="19" y="384" width="337" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="vrc-lk-Hhg">
-                                <rect key="frame" x="72" y="88" width="230" height="207"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="UPLOAD PHOTO"/>
-                                <connections>
-                                    <action selector="uploadButtonPressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="RBi-ka-799"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -137,6 +137,7 @@
                         <outlet property="backButton" destination="9Vn-z8-f4i" id="mHg-Sw-5Q0"/>
                         <outlet property="categoryFirld" destination="irf-8o-uJW" id="gyk-4h-cpW"/>
                         <outlet property="coverImage" destination="H32-2W-1oe" id="Cpd-et-Pan"/>
+                        <outlet property="descriptionField" destination="I7z-da-KSe" id="7GU-Z3-FOv"/>
                         <outlet property="tagOfBox" destination="1qB-Bq-U1y" id="oav-PF-uyp"/>
                         <outlet property="titleField" destination="hND-UO-8LT" id="LkT-2W-bxv"/>
                         <outlet property="uploadButton" destination="vrc-lk-Hhg" id="2zK-kd-Uts"/>
@@ -169,9 +170,6 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="freeify" id="aml-7F-E8V">
-                                        <barButtonItem key="leftBarButtonItem" springLoaded="YES" style="plain" systemItem="trash" id="AhB-hp-KMI">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="pin" id="9l9-pA-2yI">
                                             <color key="tintColor" red="0.01513547946" green="0.015062361200000001" blue="0.01520859772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>

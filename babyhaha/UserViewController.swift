@@ -123,7 +123,9 @@ class UserViewController: UIViewController {
         }
     }
     
+    
     func getDataFromFirebase(){
+        guard let uid =  Auth.auth().currentUser?.uid else { return }
         ref = Database.database().reference()
         databasehandle = ref?.child("Boxes").observe(.childAdded, with: { snapshot in
             
@@ -137,20 +139,17 @@ class UserViewController: UIViewController {
                 } else {
                     if let data  = data {
                        let coverImg = UIImage(data: data)
-                       let gotBox = Box(title: datafir!["title"]! , category: datafir!["category"]!, tag: datafir!["tag"]!, coverImage:coverImg!)
+                       
+                        let gotBox = Box(title: datafir!["title"]! , category: datafir!["category"]!, tag: datafir!["tag"]!, coverImage:coverImg!, description:datafir!["description"]!, location: datafir!["location"]!, owner: datafir!["owner"]!)
                         Boxesarr.append(gotBox)
                         self.boxCollectionView.reloadData()
                     }
                 }
             }
-
-            
-            //let gotBox = Box(title: datafir!["title"]! , category: datafir!["category"]!, tag: datafir!["tag"]!, coverImage:coverImg!)
-            //Boxesarr.append(gotBox)
-            //self.boxCollectionView.reloadData()
             
         })
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemsSegue"{

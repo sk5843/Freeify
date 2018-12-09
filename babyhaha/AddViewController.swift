@@ -10,9 +10,14 @@ import UIKit
 import Firebase
 import DoneHUD
 import ImagePicker
+import CoreLocation
 
 class AddViewController: UIViewController{
+    
+    let locationManager = CLLocationManager()
+    var userLoc:String?
 
+    @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var uploadImageView: UIImageView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var backButton: UIButton!
@@ -41,18 +46,34 @@ class AddViewController: UIViewController{
         titleField.borderStyle = .roundedRect
         categoryFirld.borderStyle = .roundedRect
         // Do any additional setup after loading the view.
-        
+        determineCurrentLocation()
         self.hideKeyboard()
     }
+    
+    func determineCurrentLocation()
+    {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    
+    
 
     @IBAction func addButtonPressed(_ sender: Any) {
-        var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!) //HERE
-        //Upload data to firebase
+        guard let uid =  Auth.auth().currentUser?.uid else { return }
+        var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc!, owner:uid )
+        //Upload data to firebase and local array
         uploadToFirebase(box: newBox)
         //Clear text fields
         titleField.text=""
         categoryFirld.text=""
         tagOfBox.text=""
+        descriptionField.text=""
         //Show HUD
         DoneHUD.showInView(self.view, message: "Added")
         
@@ -67,7 +88,7 @@ class AddViewController: UIViewController{
         
     }
     
-    func uploadToFirebase(box:Box){ //HERE
+    func uploadToFirebase(box:Box){ 
         //All boxes SHOULD have a unique title
         let ref = Storage.storage().reference().child("boxItems").child(box.title)
         let metaData = Data()
@@ -86,8 +107,12 @@ class AddViewController: UIViewController{
                 let dictionaryValues = ["title": box.title,
                                 "category": box.category,
                                 "tag": box.tag,
-                                "coverImage": downloadUrl.absoluteString] as [String : String]
+                                "coverImage": downloadUrl.absoluteString,
+                                "description": box.description,
+                                "location": self.userLoc,
+                                "owner": box.owner] as! [String : String]
                 Database.database().reference().child("Boxes").child(box.title).setValue(dictionaryValues)
+                
             }
         }
     }
@@ -111,7 +136,7 @@ extension UIViewController
     }
 }
 
-extension AddViewController: ImagePickerDelegate{ //HERE, THIS WHOLE extension
+extension AddViewController: ImagePickerDelegate{ 
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -126,4 +151,18 @@ extension AddViewController: ImagePickerDelegate{ //HERE, THIS WHOLE extension
     }
     
     
+}
+extension AddViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let lat = locations.last?.coordinate.latitude, let long = locations.last?.coordinate.longitude {
+            print("\(lat),\(long)")
+            self.userLoc = String(format: "%f", lat)+","+String(format: "%f", long)
+            
+        } else {
+            print("No coordinates")
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }

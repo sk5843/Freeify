@@ -26,9 +26,7 @@ var profileImage: UIImage?
 class ViewController: UIViewController {
     
     @IBOutlet weak var loginWithFb: UIButton!
-    @IBOutlet weak var logInButton: UIButton!
-    
-    @IBOutlet weak var signUpButton: UIButton!
+
     
 
     override func viewDidLoad() {

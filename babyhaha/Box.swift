@@ -18,13 +18,17 @@ class Box{
     var tag: String
     var coverImage: UIImage
     var items: [UIImage] = []
-    var description:String = ""
-    var location: CLLocationCoordinate2D?
+    var description:String
+    var location: String
+    var owner: String
     
-    init(title: String, category: String, tag: String, coverImage: UIImage) {
+    init(title: String, category: String, tag: String, coverImage: UIImage, description: String, location: String, owner: String) {
         self.title = title
         self.category = category
         self.tag = tag
         self.coverImage = coverImage
+        self.description = description
+        self.location = location
+        self.owner = owner
     }
 }

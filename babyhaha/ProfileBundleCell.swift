@@ -27,6 +27,7 @@ class ProfileBundleCell: UICollectionViewCell {
         let hitIndex = boxCollectionViewgl!.indexPathForItem(at: hitPoint)
             
         //remove the box and refresh the collection view
+        guard let uid =  Auth.auth().currentUser?.uid else { return }
         var titleToRemove = Boxesarr[(hitIndex?.row)!].title
         Boxesarr.remove(at: (hitIndex?.row)!)
         Database.database().reference().child("Boxes").child(titleToRemove).removeValue()

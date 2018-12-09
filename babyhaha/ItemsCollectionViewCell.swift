@@ -19,7 +19,6 @@ class ItemsCollectionViewCell: UICollectionViewCell {
         
         //remove the image and refresh the collection view
         Boxesarr[boxIndexCurrent!].items.remove(at: (hitIndex?.row)!)
-        //Database.database().reference().child("Boxes").child(titleToRemove).removeValue()
         itCView!.reloadData()
     }
     
