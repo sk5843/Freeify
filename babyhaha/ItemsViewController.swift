@@ -14,6 +14,12 @@ var itCView: ItemsCollectionView?
 var boxIndexCurrent:Int?
 class ItemsViewController: UIViewController {
 
+    @IBOutlet weak var boxTitleLabel: UILabel!
+    
+    @IBOutlet weak var boxCategoryLabel: UILabel!
+    
+    @IBOutlet weak var boxDescription: UILabel!
+    
     var boxTitle:String?
     var boxIndex:Int?
     var arr: [UIImage]?
@@ -41,6 +47,19 @@ class ItemsViewController: UIViewController {
         //adding longpress gesture over UICollectionView
         var longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
         ItemsCollectionVieww.addGestureRecognizer(longPressGesture)
+        //Init view
+        initializeView()
+        
+    }
+    
+    func initializeView(){
+        for box in Boxesarr{
+            if box.title == self.boxTitle{
+                self.boxTitleLabel.text = box.title
+                self.boxCategoryLabel.text = box.category
+                self.boxDescription.text = box.description
+            }
+        }
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){

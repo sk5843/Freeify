@@ -157,6 +157,7 @@ class UserViewController: UIViewController {
             vc?.boxTitle = self.boxTitle
             vc?.boxIndex = self.boxIndex
             
+            
         }
     }
     
