@@ -11,6 +11,7 @@
 		3215904821B42740006C118C /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904721B42740006C118C /* ItemsCollectionViewCell.swift */; };
 		3215904C21B428A3006C118C /* ItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904B21B428A3006C118C /* ItemsCollectionView.swift */; };
 		3215904E21B568EA006C118C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904D21B568EA006C118C /* ChatViewCell.swift */; };
+		327A223521BEC72000477448 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A223421BEC72000477448 /* SearchTableViewCell.swift */; };
 		32942CFB21A3979300B2A51C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942CFA21A3979300B2A51C /* SearchViewController.swift */; };
 		32942CFD21A397A100B2A51C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942CFC21A397A100B2A51C /* ChatViewController.swift */; };
 		32942CFF21A397AE00B2A51C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942CFE21A397AE00B2A51C /* UserViewController.swift */; };
@@ -42,6 +43,7 @@
 		3215904721B42740006C118C /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3215904B21B428A3006C118C /* ItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionView.swift; sourceTree = "<group>"; };
 		3215904D21B568EA006C118C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
+		327A223421BEC72000477448 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		32942CFA21A3979300B2A51C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32942CFC21A397A100B2A51C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		32942CFE21A397AE00B2A51C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				32942CFE21A397AE00B2A51C /* UserViewController.swift */,
 				32E35EED21A2584400A9B5B1 /* ViewController.swift */,
 				32E35EEF21A2584400A9B5B1 /* Main.storyboard */,
+				327A223421BEC72000477448 /* SearchTableViewCell.swift */,
 				32DBD20E21BE2107004C895A /* HomeTable.swift */,
 				32DF607021B9CA210031870B /* MapViewController.swift */,
 				3215904721B42740006C118C /* ItemsCollectionViewCell.swift */,
@@ -328,6 +331,7 @@
 				32E35EEC21A2584400A9B5B1 /* AppDelegate.swift in Sources */,
 				32DF607121B9CA210031870B /* MapViewController.swift in Sources */,
 				32942CFD21A397A100B2A51C /* ChatViewController.swift in Sources */,
+				327A223521BEC72000477448 /* SearchTableViewCell.swift in Sources */,
 				B90275BF21B201BD00A9EAF1 /* ProfileBundleCell.swift in Sources */,
 				3215904421B42549006C118C /* ItemsViewController.swift in Sources */,
 				3215904E21B568EA006C118C /* ChatViewCell.swift in Sources */,

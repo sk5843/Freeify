@@ -9,22 +9,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="gUK-dv-fa1">
             <objects>
-                <viewController id="a6P-LQ-BuX" sceneMemberID="viewController">
+                <viewController id="a6P-LQ-BuX" customClass="SearchViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyH-yn-57M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" id="Mkx-wL-IB3">
-                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sdj-Pq-h7t">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" searchBarStyle="minimal" text="" showsCancelButton="YES" id="JCI-20-ZAm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
+                                    <connections>
+                                        <outlet property="delegate" destination="a6P-LQ-BuX" id="DaR-I9-agO"/>
+                                    </connections>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="133" id="B5b-gu-V2F" customClass="SearchTableViewCell" customModule="babyhaha" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="84" width="375" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B5b-gu-V2F" id="ZJJ-b2-Hiz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="132.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="jRE-hJ-qqW">
+                                                    <rect key="frame" x="15" y="11" width="111" height="111"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Kitchenware" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U7K-pr-6fp">
+                                                    <rect key="frame" x="157" y="71" width="203" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kitchen items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sj4-gf-BKV">
+                                                    <rect key="frame" x="157" y="29" width="165" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchItemCategory" destination="U7K-pr-6fp" id="UOa-YH-hwg"/>
+                                            <outlet property="searchItemImage" destination="jRE-hJ-qqW" id="1Ep-U3-mMp"/>
+                                            <outlet property="searchItemLabel" destination="sj4-gf-BKV" id="AJT-fO-4WH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="delegate" destination="a6P-LQ-BuX" id="b3c-RI-Ld8"/>
+                                    <outlet property="dataSource" destination="a6P-LQ-BuX" id="3qY-EK-rbf"/>
+                                    <outlet property="delegate" destination="a6P-LQ-BuX" id="Ld3-Br-abq"/>
                                 </connections>
-                            </searchBar>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -32,21 +82,13 @@
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="searchDisplayController" destination="O2e-iH-dx1" id="WSn-jm-D3T"/>
+                        <outlet property="searchBar" destination="JCI-20-ZAm" id="cfx-T1-fR0"/>
+                        <outlet property="searchTableView" destination="sdj-Pq-h7t" id="dvo-SV-tc0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFa-zo-QIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="O2e-iH-dx1">
-                    <connections>
-                        <outlet property="delegate" destination="a6P-LQ-BuX" id="stA-yz-m0a"/>
-                        <outlet property="searchBar" destination="Mkx-wL-IB3" id="4pn-Zf-4aZ"/>
-                        <outlet property="searchContentsController" destination="a6P-LQ-BuX" id="gAZ-gq-qkR"/>
-                        <outlet property="searchResultsDataSource" destination="a6P-LQ-BuX" id="LmH-VI-Suo"/>
-                        <outlet property="searchResultsDelegate" destination="a6P-LQ-BuX" id="t7f-Q0-xW7"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1937" y="409"/>
+            <point key="canvasLocation" x="1936.8" y="408.62068965517244"/>
         </scene>
         <!--addbox-->
         <scene sceneID="guV-Xs-bMJ">
