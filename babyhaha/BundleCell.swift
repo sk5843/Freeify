@@ -10,4 +10,8 @@ import UIKit
 
 class BundleCell: UICollectionViewCell {
     
+    @IBOutlet weak var categoryBundle: UIImageView!
+    
+    @IBOutlet weak var categoryBundleLabel: UIButton!
+    
 }

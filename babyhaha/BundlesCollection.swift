@@ -10,22 +10,24 @@ import UIKit
 
 class BundlesCollection: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var imagesArray = ["clothing1", "clothing2", "clothing3"]
+    var imagesTitle = ["Zara", "Gucci", "Fendi"]
     override func awakeFromNib() {
         self.delegate = self
         self.dataSource = self
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BundleCell", for: indexPath) as! BundleCell
-        
-        return cell
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BundleCell", for: indexPath) as? BundleCell
+        cell?.categoryBundle.image = UIImage(named: imagesArray[indexPath.row])
+        cell?.categoryBundleLabel.setTitle(imagesTitle[indexPath.row], for: .normal)
+        return cell!
     }
+    
 }
+
+

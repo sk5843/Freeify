@@ -18,6 +18,7 @@
 		32942D0521A60D7E00B2A51C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942D0421A60D7E00B2A51C /* AddViewController.swift */; };
 		32BCFFA321B2C74C002E1A7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32BCFFA221B2C74C002E1A7D /* GoogleService-Info.plist */; };
 		32BCFFA521B2CBA7002E1A7D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCFFA421B2CBA7002E1A7D /* Box.swift */; };
+		32DBD20F21BE2107004C895A /* HomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DBD20E21BE2107004C895A /* HomeTable.swift */; };
 		32DF607121B9CA210031870B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF607021B9CA210031870B /* MapViewController.swift */; };
 		32DF607321B9CDB60031870B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF607221B9CDB60031870B /* MapKit.framework */; };
 		32E35EEC21A2584400A9B5B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E35EEB21A2584400A9B5B1 /* AppDelegate.swift */; };
@@ -28,7 +29,6 @@
 		32E35EF921A2584400A9B5B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E35EF721A2584400A9B5B1 /* LaunchScreen.storyboard */; };
 		32E35F0921A2631D00A9B5B1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E35F0821A2631D00A9B5B1 /* HomeViewController.swift */; };
 		3D14F9465B439A7303E58846 /* Pods_babyhaha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D058EA7A6A5876EAFAE29685 /* Pods_babyhaha.framework */; };
-		B90275AF21B1D9C600A9EAF1 /* HomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90275AE21B1D9C600A9EAF1 /* HomeTable.swift */; };
 		B90275B121B1D9DE00A9EAF1 /* BundlesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90275B021B1D9DE00A9EAF1 /* BundlesCollection.swift */; };
 		B90275B721B1DA4800A9EAF1 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90275B621B1DA4800A9EAF1 /* CategoryCell.swift */; };
 		B90275B921B1DA7100A9EAF1 /* BundleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90275B821B1DA7100A9EAF1 /* BundleCell.swift */; };
@@ -49,6 +49,7 @@
 		32942D0421A60D7E00B2A51C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32BCFFA221B2C74C002E1A7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32BCFFA421B2CBA7002E1A7D /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		32DBD20E21BE2107004C895A /* HomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTable.swift; sourceTree = "<group>"; };
 		32DF607021B9CA210031870B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		32DF607221B9CDB60031870B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		32E35EE821A2584400A9B5B1 /* babyhaha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyhaha.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +62,6 @@
 		32E35EFA21A2584500A9B5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32E35F0821A2631D00A9B5B1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5355FDA318AB16B2549A31CF /* Pods-babyhaha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyhaha.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyhaha/Pods-babyhaha.release.xcconfig"; sourceTree = "<group>"; };
-		B90275AE21B1D9C600A9EAF1 /* HomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTable.swift; sourceTree = "<group>"; };
 		B90275B021B1D9DE00A9EAF1 /* BundlesCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundlesCollection.swift; sourceTree = "<group>"; };
 		B90275B621B1DA4800A9EAF1 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		B90275B821B1DA7100A9EAF1 /* BundleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleCell.swift; sourceTree = "<group>"; };
@@ -122,6 +122,7 @@
 				32942CFE21A397AE00B2A51C /* UserViewController.swift */,
 				32E35EED21A2584400A9B5B1 /* ViewController.swift */,
 				32E35EEF21A2584400A9B5B1 /* Main.storyboard */,
+				32DBD20E21BE2107004C895A /* HomeTable.swift */,
 				32DF607021B9CA210031870B /* MapViewController.swift */,
 				3215904721B42740006C118C /* ItemsCollectionViewCell.swift */,
 				32BCFFA421B2CBA7002E1A7D /* Box.swift */,
@@ -132,7 +133,6 @@
 				32E35EFA21A2584500A9B5B1 /* Info.plist */,
 				32E35EF221A2584400A9B5B1 /* babyhaha.xcdatamodeld */,
 				32E35F0821A2631D00A9B5B1 /* HomeViewController.swift */,
-				B90275AE21B1D9C600A9EAF1 /* HomeTable.swift */,
 				B90275B021B1D9DE00A9EAF1 /* BundlesCollection.swift */,
 				B90275B621B1DA4800A9EAF1 /* CategoryCell.swift */,
 				B90275B821B1DA7100A9EAF1 /* BundleCell.swift */,
@@ -315,6 +315,7 @@
 			files = (
 				B90275B721B1DA4800A9EAF1 /* CategoryCell.swift in Sources */,
 				3215904821B42740006C118C /* ItemsCollectionViewCell.swift in Sources */,
+				32DBD20F21BE2107004C895A /* HomeTable.swift in Sources */,
 				32942D0321A39C9A00B2A51C /* TabViewController.swift in Sources */,
 				B90275BD21B2019100A9EAF1 /* ProfileBundlesCollection.swift in Sources */,
 				32942CFF21A397AE00B2A51C /* UserViewController.swift in Sources */,
@@ -322,7 +323,6 @@
 				32942CFB21A3979300B2A51C /* SearchViewController.swift in Sources */,
 				3215904C21B428A3006C118C /* ItemsCollectionView.swift in Sources */,
 				32E35EEE21A2584400A9B5B1 /* ViewController.swift in Sources */,
-				B90275AF21B1D9C600A9EAF1 /* HomeTable.swift in Sources */,
 				32E35EF421A2584400A9B5B1 /* babyhaha.xcdatamodeld in Sources */,
 				B90275B121B1D9DE00A9EAF1 /* BundlesCollection.swift in Sources */,
 				32E35EEC21A2584400A9B5B1 /* AppDelegate.swift in Sources */,
