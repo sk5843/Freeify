@@ -27,7 +27,8 @@ class ChatViewCell: UITableViewCell {
                     
                     if success == false {
                         // Messenger is not installed. Open in browser instead.
-                        let url = URL(string: "https://m.me/\(self.userId)")
+                        var urlStr = "https://m.me/"+self.userId!
+                        let url = URL(string: urlStr)
                         if UIApplication.shared.canOpenURL(url!) {
                             UIApplication.shared.open(url!)
                         }

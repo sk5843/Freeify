@@ -11,12 +11,20 @@ import MapKit
 import CoreLocation
 import RangeRadiusMKMapView
 
+
+protocol ModalHandler {
+    func modalDismissed(range: Double, currLoc: CLLocation)
+}
+
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager!
     var mapView2:RangeRadiusMKMapView!
     var distanceLabel:UILabel!
     var exitButton:UIButton!
+    var delegate: HomeViewController!
+    var currentRange: Double!
+    var currentloc: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +59,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func exitbuttonAction(sender: UIButton!) {
+        delegate.modalDismissed(range: self.currentRange, currLoc: self.currentloc)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -91,6 +100,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         self.mapView2.addAnnotation(myAnnotation)
         createExitButtonOnMap()
         createDistanceLabelOnMap()
+        currentloc = userLocation
         manager.stopUpdatingLocation()
         
     }
@@ -123,6 +133,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         self.distanceLabel.text = "Range: \(distance)"
         self.distanceLabel.font = UIFont(name: "Avenir-Black", size: 16)
+        currentRange = range
         
     }
     
