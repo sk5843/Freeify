@@ -215,7 +215,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="pin" id="9l9-pA-2yI">
                                             <color key="tintColor" red="0.01513547946" green="0.015062361200000001" blue="0.01520859772" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <segue destination="0v1-Qz-kUG" kind="modal" modalTransitionStyle="crossDissolve" id="osw-gc-2Gx"/>
+                                                <segue destination="0v1-Qz-kUG" kind="modal" identifier="mapSegue" modalTransitionStyle="crossDissolve" id="osw-gc-2Gx"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -278,6 +278,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="homeCollectionView" destination="lO0-nK-GLm" id="YqB-qa-Cb5"/>
+                        <segue destination="tIT-R2-4Xk" kind="modal" identifier="homeToItems" id="Bfk-Us-kja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBM-rB-Tdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -784,4 +785,7 @@ Using?</string>
         <image name="user" width="25" height="25"/>
         <image name="userSelected" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bfk-Us-kja"/>
+    </inferredMetricsTieBreakers>
 </document>

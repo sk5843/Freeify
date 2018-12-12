@@ -22,8 +22,10 @@ class HomeViewController: UIViewController, ModalHandler {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let childVc = segue.destination as! MapViewController
-        childVc.delegate = self
+        if(segue.identifier=="mapSegue"){
+            let childVc = segue.destination as! MapViewController
+            childVc.delegate = self
+        }
         
     }
     
@@ -52,8 +54,8 @@ class HomeViewController: UIViewController, ModalHandler {
             
             if !snapshot.exists() { return }
             print(snapshot) // Its print all values including Snap (User)
-            var datafir = snapshot.value as? [String:String]
-            Storage.storage().reference().child("boxItems").child(datafir!["title"]!).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+            var datafir = snapshot.value as! [String:Any]
+            Storage.storage().reference().child("boxItems").child(datafir["title"]! as! String).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
                 if let _error = error{
                     print(_error)
                     
@@ -61,7 +63,7 @@ class HomeViewController: UIViewController, ModalHandler {
                     if let data  = data {
                         let coverImg = UIImage(data: data)
                         
-                        let gotBox = Box(title: datafir!["title"]! , category: datafir!["category"]!, tag: datafir!["tag"]!, coverImage:coverImg!, description:datafir!["description"]!, location: datafir!["location"]!, owner: datafir!["owner"]!)
+                        let gotBox = Box(title: datafir["title"]! as! String , category: datafir["category"]! as! String, tag: datafir["tag"]! as! String, coverImage:coverImg!, description:datafir["description"]! as! String, location: datafir["location"]! as! String, owner: datafir["owner"]! as! String)
                         self.allBundles.append(gotBox)
                         
                     }
@@ -107,6 +109,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.homeBundleTitle.text = filteredBundles[indexPath.row].title
         return cell
         
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //performSegue(withIdentifier: "homeToItems", sender: self)
     }
     
     

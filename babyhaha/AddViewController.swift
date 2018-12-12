@@ -91,14 +91,12 @@ class AddViewController: UIViewController{
     func uploadToFirebase(box:Box){ 
         //All boxes SHOULD have a unique title
         let ref = Storage.storage().reference().child("boxItems").child(box.title)
-        let metaData = Data()
         let uploadTask = ref.putData(box.coverImage.jpegData(compressionQuality: 0.3)!, metadata: nil) { (metadata, error) in
             guard let metadata = metadata else {
                 // Uh-oh, an error occurred!
                 return
             }
             // Metadata contains file metadata such as size, content-type, and download URL.
-            let size = metadata.size
             ref.downloadURL { (url, error) in
                 guard let downloadUrl = url else {
                     // Uh-oh, an error occurred!

@@ -125,14 +125,14 @@ class UserViewController: UIViewController {
     
     
     func getDataFromFirebase(){
-        guard let uid =  Auth.auth().currentUser?.uid else { return }
+        
         ref = Database.database().reference()
         databasehandle = ref?.child("Boxes").observe(.childAdded, with: { snapshot in
             
             if !snapshot.exists() { return }
             print(snapshot) // Its print all values including Snap (User)
-            var datafir = snapshot.value as? [String:String]
-            Storage.storage().reference().child("boxItems").child(datafir!["title"]!).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+            var datafir = snapshot.value as? [String:Any]
+            Storage.storage().reference().child("boxItems").child(datafir!["title"]! as! String).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
                 if let _error = error{
                     print(_error)
                     
@@ -140,7 +140,7 @@ class UserViewController: UIViewController {
                     if let data  = data {
                        let coverImg = UIImage(data: data)
                        
-                        let gotBox = Box(title: datafir!["title"]! , category: datafir!["category"]!, tag: datafir!["tag"]!, coverImage:coverImg!, description:datafir!["description"]!, location: datafir!["location"]!, owner: datafir!["owner"]!)
+                        let gotBox = Box(title: datafir!["title"]! as! String , category: datafir!["category"]! as! String, tag: datafir!["tag"]! as! String, coverImage:coverImg!, description:datafir!["description"]! as! String, location: datafir!["location"]! as! String, owner: datafir!["owner"]! as! String)
                         Boxesarr.append(gotBox)
                         self.boxCollectionView.reloadData()
                     }
