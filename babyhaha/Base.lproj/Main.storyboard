@@ -146,7 +146,7 @@
                                     <action selector="uploadButtonPressed:" destination="iyU-na-Ff8" eventType="touchUpInside" id="RBi-ka-799"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" id="I7z-da-KSe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" id="I7z-da-KSe">
                                 <rect key="frame" x="19" y="508" width="333" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -407,18 +407,51 @@
                             <view contentMode="scaleToFill" id="X7S-gT-e9m">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oHG-5F-aoo">
-                                        <rect key="frame" x="295" y="45" width="24" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="edit"/>
-                                        <connections>
-                                            <segue destination="iyU-na-Ff8" kind="modal" identifier="editSegue" id="ehP-xF-Tx8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" red="0.72156862749999995" green="0.23921568630000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qDA-u4-Obt" customClass="ItemsCollectionView" customModule="babyhaha" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="90" width="375" height="344"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7aw-i5-Mgr">
+                                    <size key="itemSize" width="253" height="253"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemsCell" id="7kx-2b-NBt" customClass="ItemsCollectionViewCell" customModule="babyhaha" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="45.666666666666664" width="253" height="253"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="253"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" id="fLS-61-Y3d">
+                                                    <rect key="frame" x="20" y="44" width="188" height="188"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eMA-Dk-OET">
+                                                    <rect key="frame" x="197" y="28" width="28" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="remove"/>
+                                                    <connections>
+                                                        <action selector="itemsRemBtnPressed:" destination="7kx-2b-NBt" eventType="touchUpInside" id="32J-tP-IH5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="itemImageView" destination="fLS-61-Y3d" id="RfD-Sf-R2z"/>
+                                            <outlet property="itemsRemBtn" destination="eMA-Dk-OET" id="vN7-d3-RXC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="tIT-R2-4Xk" id="zSp-Cr-Fi8"/>
+                                    <outlet property="delegate" destination="tIT-R2-4Xk" id="wVl-Ae-4rq"/>
+                                </connections>
+                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5M1-AB-wgI">
                                 <rect key="frame" x="150" y="36" width="75" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -501,49 +534,16 @@ Using?</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qDA-u4-Obt" customClass="ItemsCollectionView" customModule="babyhaha" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="98" width="375" height="308"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3BE-tY-dA2">
+                                <rect key="frame" x="329" y="42" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7aw-i5-Mgr">
-                                    <size key="itemSize" width="253" height="253"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemsCell" id="7kx-2b-NBt" customClass="ItemsCollectionViewCell" customModule="babyhaha" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="27.666666666666668" width="253" height="253"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="253" height="253"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" id="fLS-61-Y3d">
-                                                    <rect key="frame" x="20" y="44" width="188" height="188"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eMA-Dk-OET">
-                                                    <rect key="frame" x="197" y="28" width="28" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="remove"/>
-                                                    <connections>
-                                                        <action selector="itemsRemBtnPressed:" destination="7kx-2b-NBt" eventType="touchUpInside" id="32J-tP-IH5"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="itemImageView" destination="fLS-61-Y3d" id="RfD-Sf-R2z"/>
-                                            <outlet property="itemsRemBtn" destination="eMA-Dk-OET" id="vN7-d3-RXC"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="tIT-R2-4Xk" id="zSp-Cr-Fi8"/>
-                                    <outlet property="delegate" destination="tIT-R2-4Xk" id="wVl-Ae-4rq"/>
+                                    <action selector="doneBtnPressed:" destination="tIT-R2-4Xk" eventType="touchUpInside" id="NN8-tx-acK"/>
                                 </connections>
-                            </collectionView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -554,7 +554,7 @@ Using?</string>
                         <outlet property="boxDescription" destination="jJh-yF-dYa" id="QSj-bG-seM"/>
                         <outlet property="boxTitleLabel" destination="t6k-zP-djT" id="7US-Ha-D6d"/>
                         <outlet property="contactView" destination="59t-bp-k4Z" id="Bwo-b2-WNo"/>
-                        <outlet property="editButton" destination="oHG-5F-aoo" id="5KE-LG-xuj"/>
+                        <outlet property="doneBtn" destination="3BE-tY-dA2" id="5UM-nG-beP"/>
                         <outlet property="itemsAddbtn" destination="gF8-6H-9aX" id="zXc-J9-z5f"/>
                         <outlet property="userImage" destination="dDt-gF-bL6" id="tJV-J3-xeo"/>
                         <outlet property="userMessenger" destination="Pp9-Ny-ucL" id="3pD-hO-zUm"/>
@@ -879,7 +879,6 @@ Using?</string>
         <image name="boxSelected" width="25" height="25"/>
         <image name="chat" width="25" height="25"/>
         <image name="chatSelected" width="25" height="25"/>
-        <image name="edit" width="160" height="160"/>
         <image name="fbcircular" width="170.66667175292969" height="170.66667175292969"/>
         <image name="grad" width="133.66667175292969" height="189.66667175292969"/>
         <image name="logo" width="341.33334350585938" height="341.33334350585938"/>
@@ -893,7 +892,6 @@ Using?</string>
         <image name="userSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zpu-bB-qre"/>
-        <segue reference="ehP-xF-Tx8"/>
+        <segue reference="VHJ-ig-9Ei"/>
     </inferredMetricsTieBreakers>
 </document>

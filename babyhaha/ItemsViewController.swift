@@ -12,10 +12,21 @@ import Firebase
 import AVFoundation
 
 
-
 class ItemsViewController: UIViewController {
     
-    @IBOutlet weak var editButton: UIButton!
+    
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        animateButton(button: doneBtn)
+        
+        //disable the shake and hide done button
+        doneBtn.isHidden = true
+        itemsAddbtn.isHidden = false
+        longPressedEnabled = false
+        
+        self.ItemsCollectionVieww.reloadData()
+    }
+    
+    @IBOutlet weak var doneBtn: UIButton!
     
     @IBOutlet weak var contactView: UIView!
     
@@ -24,8 +35,6 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var userMessenger: UIButton!
-    
-    
     
     @IBAction func usermessengerButtonPressed(_ sender: UIButton) {
         animateButton(button: sender)
@@ -116,6 +125,7 @@ class ItemsViewController: UIViewController {
         if(contactViewIsHidden){
             contactView.isHidden = true
         }
+         doneBtn.isHidden = true
         self.boxDescription.layer.borderColor = UIColor.black.cgColor
         self.boxTitleLabel.text = boxSelected.title
         self.boxCategoryLabel.text = "Category: "+boxSelected.category
@@ -145,7 +155,6 @@ class ItemsViewController: UIViewController {
         self.userImage.layer.borderColor = UIColor.clear.cgColor
         
         
-        
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){
@@ -160,26 +169,12 @@ class ItemsViewController: UIViewController {
             ItemsCollectionVieww.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
         case .ended:
             ItemsCollectionVieww.endInteractiveMovement()
+            doneBtn.isHidden = false
+            itemsAddbtn.isHidden=true
             longPressedEnabled = true
             self.ItemsCollectionVieww.reloadData()
         default:
             ItemsCollectionVieww.cancelInteractiveMovement()
-        }
-    }
-    func editPressed(){
-        //Refresh details
-        self.boxTitleLabel.text = boxSelected.title
-        self.boxCategoryLabel.text = "Category: "+boxSelected.category
-        self.boxDescription.text = boxSelected.description
-        
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier=="editSegue"){
-            let vc = segue.destination as! AddViewController
-            vc.delegate = self
-            vc.editSeguetriggered = true
-            
-            
         }
     }
     

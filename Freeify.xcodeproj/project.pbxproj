@@ -54,7 +54,7 @@
 		32D6A4FC21BF3F7100D3231D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32DF607021B9CA210031870B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		32DF607221B9CDB60031870B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		32E35EE821A2584400A9B5B1 /* babyhaha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyhaha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E35EE821A2584400A9B5B1 /* Freeify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Freeify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E35EEB21A2584400A9B5B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E35EED21A2584400A9B5B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		32E35EF021A2584400A9B5B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		32E35EE921A2584400A9B5B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32E35EE821A2584400A9B5B1 /* babyhaha.app */,
+				32E35EE821A2584400A9B5B1 /* Freeify.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32E35EE721A2584400A9B5B1 /* babyhaha */ = {
+		32E35EE721A2584400A9B5B1 /* Freeify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32E35EFD21A2584500A9B5B1 /* Build configuration list for PBXNativeTarget "babyhaha" */;
+			buildConfigurationList = 32E35EFD21A2584500A9B5B1 /* Build configuration list for PBXNativeTarget "Freeify" */;
 			buildPhases = (
 				9F47A307612882D21DBE6C69 /* [CP] Check Pods Manifest.lock */,
 				32E35EE421A2584400A9B5B1 /* Sources */,
@@ -171,9 +171,9 @@
 			);
 			dependencies = (
 			);
-			name = babyhaha;
+			name = Freeify;
 			productName = babyhaha;
-			productReference = 32E35EE821A2584400A9B5B1 /* babyhaha.app */;
+			productReference = 32E35EE821A2584400A9B5B1 /* Freeify.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -199,7 +199,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 32E35EE321A2584400A9B5B1 /* Build configuration list for PBXProject "babyhaha" */;
+			buildConfigurationList = 32E35EE321A2584400A9B5B1 /* Build configuration list for PBXProject "Freeify" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -212,7 +212,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32E35EE721A2584400A9B5B1 /* babyhaha */,
+				32E35EE721A2584400A9B5B1 /* Freeify */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,6 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/DoneHUD/DoneHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/ExpandableButton/ExpandableButton.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
@@ -291,7 +290,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoneHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
@@ -526,7 +524,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32E35EE321A2584400A9B5B1 /* Build configuration list for PBXProject "babyhaha" */ = {
+		32E35EE321A2584400A9B5B1 /* Build configuration list for PBXProject "Freeify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E35EFB21A2584500A9B5B1 /* Debug */,
@@ -535,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32E35EFD21A2584500A9B5B1 /* Build configuration list for PBXNativeTarget "babyhaha" */ = {
+		32E35EFD21A2584500A9B5B1 /* Build configuration list for PBXNativeTarget "Freeify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32E35EFE21A2584500A9B5B1 /* Debug */,

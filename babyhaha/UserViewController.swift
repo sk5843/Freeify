@@ -80,6 +80,7 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Boxesarr = []
         doneButton.isHidden=true
         boxCollectionViewgl = boxCollectionView
         //getData from firebase

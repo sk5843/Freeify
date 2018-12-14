@@ -43,9 +43,9 @@ class HomeViewController: UIViewController, ModalHandler {
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
     var currentLoc:CLLocation?
-    var range: Double?
+    var range:Double?
     var boxSelected:Box?
-    
+    var locationManager:CLLocationManager!
 
     
     @IBOutlet weak var homeCollectionView: HomeCollectionView!
@@ -53,7 +53,9 @@ class HomeViewController: UIViewController, ModalHandler {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.range = 2000
         getDataFromFirebase()
+        determineCurrentLocation()
         filterBundlesbyLocation()
         homeCollectionView.reloadData()
         // Do any additional setup after loading the view.
@@ -149,3 +151,33 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 
+extension HomeViewController: CLLocationManagerDelegate{
+    func determineCurrentLocation()
+    {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            //locationManager.startUpdatingHeading()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLoc = locations[0] as CLLocation
+        filteredBundles = []
+        filterBundlesbyLocation()
+        homeCollectionView.reloadData()
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        //manager.stopUpdatingLocation()
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    {
+        print("Error \(error)")
+    }
+    
+}

@@ -12,15 +12,10 @@ import DoneHUD
 import ImagePicker
 import CoreLocation
 
-
-
 class AddViewController: UIViewController{
     
     let locationManager = CLLocationManager()
     var userLoc:String?
-    //var boxSelected:Box!
-    var editSeguetriggered = false
-    var delegate: ItemsViewController!
 
     @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var uploadImageView: UIImageView!
@@ -53,16 +48,6 @@ class AddViewController: UIViewController{
         // Do any additional setup after loading the view.
         determineCurrentLocation()
         self.hideKeyboard()
-        if(editSeguetriggered){
-            addButton.setTitle("EDIT", for: .normal)
-            titleField.text = delegate.boxSelected.title
-            categoryFirld.text = delegate.boxSelected.category
-            descriptionField.text = delegate.boxSelected.description
-            coverImage.image = delegate.boxSelected.coverImage
-        }
-        else{
-            addButton.setTitle("ADD", for: .normal)
-        }
     }
     
     func determineCurrentLocation()
@@ -81,60 +66,28 @@ class AddViewController: UIViewController{
 
     @IBAction func addButtonPressed(_ sender: Any) {
         guard let uid =  Auth.auth().currentUser?.uid else { return }
-        if(editSeguetriggered){
-            
-            //upload edited box to firebase
-            var newBox: Box = Box(title: self.titleField.text!, category: self.categoryFirld.text!, tag: self.tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc ?? "", owner:uid )
-            uploadToFirebase(box: newBox)
-            //Copy items
-            if(delegate.boxSelected.items.count>0){
-                let ref = Database.database().reference().child("Boxes").child(delegate.boxSelected.title).child("items")
-                ref.observeSingleEvent(of: .value, with: { (snapshot) in
-                    var dictItems = snapshot.value as! [String:String]
-                    Database.database().reference().child("Boxes").child(self.titleField.text!).child("items").setValue(dictItems)
-                })
-            }
-            //delete old box
-            Database.database().reference().child("Boxes").child(delegate.boxSelected.title).removeValue()
-            delegate.boxSelected.title = self.titleField.text!
-            delegate.boxSelected.category = self.categoryFirld.text!
-            delegate.boxSelected.description = self.descriptionField.text!
-            delegate.boxSelected.coverImage = self.coverImage.image!
-            delegate.editPressed()
-            //Show HUD
-            DoneHUD.showInView(self.view, message: "Saved edits")
-            
-            //Exit view
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-                // Your code with delay
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-        else{
-            var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc ?? "", owner:uid )
-            //Upload data to firebase and local array
-            uploadToFirebase(box: newBox)
-            //Clear text fields
-            titleField.text=""
-            categoryFirld.text=""
-            tagOfBox.text=""
-            descriptionField.text=""
-            //Show HUD
-            DoneHUD.showInView(self.view, message: "Added")
-            
-            //Exit view
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-                // Your code with delay
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
+        var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc ?? "", owner:uid )
+        //Upload data to firebase and local array
+        uploadToFirebase(box: newBox)
+        //Clear text fields
+        titleField.text=""
+        categoryFirld.text=""
+        tagOfBox.text=""
+        descriptionField.text=""
+        //Show HUD
+        DoneHUD.showInView(self.view, message: "Added")
         
+        //Exit view
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+            // Your code with delay
+            self.dismiss(animated: true, completion: nil)
+        }
         
         
         
         
     }
-
+    
     func uploadToFirebase(box:Box){ 
         //All boxes SHOULD have a unique title
         let ref = Storage.storage().reference().child("boxItems").child(box.title)
