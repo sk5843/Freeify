@@ -9,9 +9,57 @@
 import UIKit
 import ImagePicker
 import Firebase
+import AVFoundation
 
 
 class ItemsViewController: UIViewController {
+    
+    
+    @IBOutlet weak var contactView: UIView!
+    
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userMessenger: UIButton!
+    
+    @IBAction func usermessengerButtonPressed(_ sender: UIButton) {
+        animateButton(button: sender)
+        let systemSoundID: SystemSoundID = 1102
+        AudioServicesPlaySystemSound (systemSoundID)
+        var urlString = "fb-messenger://user-thread/"+userID!
+        if let url = URL(string: urlString) {
+            
+            // Attempt to open in Messenger App first
+            UIApplication.shared.open(url, options: [:], completionHandler: {
+                (success) in
+                
+                if success == false {
+                    // Messenger is not installed. Open in browser instead.
+                    var urlStr = "https://m.me/"+self.userID!
+                    let url = URL(string: urlStr)
+                    if UIApplication.shared.canOpenURL(url!) {
+                        UIApplication.shared.open(url!)
+                    }
+                }
+            })
+        }
+        
+    }
+    func animateButton(button:UIButton){
+        button.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        button.transform = .identity
+            },
+                       completion: nil)
+    }
+    
 
     @IBOutlet weak var boxTitleLabel: UILabel!
     
@@ -21,10 +69,12 @@ class ItemsViewController: UIViewController {
     
     
     var boxSelected:Box!
-    //var itemsArray=[UIImage]()
     var longPressedEnabled = false
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
+    var userID:String?
+    var itemsAddBtnIsHidden = false
+    var contactViewIsHidden = false
 
     @IBOutlet weak var ItemsCollectionVieww: ItemsCollectionView!
 
@@ -39,7 +89,8 @@ class ItemsViewController: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        
+        self.contactView.isHidden = false
+        self.itemsAddbtn.isHidden = false
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
@@ -49,17 +100,47 @@ class ItemsViewController: UIViewController {
         ItemsCollectionVieww.addGestureRecognizer(longPressGesture)
         //Init view
         initializeView()
-        //getDataFromFirebase()
+        
         
     }
     
     func initializeView(){
-        
+        //Hide stuff according to segues
+        if(itemsAddBtnIsHidden){
+            itemsAddbtn.isHidden = true
+        }
+        if(contactViewIsHidden){
+            contactView.isHidden = true
+        }
+        self.boxDescription.layer.borderColor = UIColor.black.cgColor
         self.boxTitleLabel.text = boxSelected.title
-        self.boxCategoryLabel.text = boxSelected.category
+        self.boxCategoryLabel.text = "Category: "+boxSelected.category
         self.boxDescription.text = boxSelected.description
-        //self.itemsArray = boxSelected.items
-    
+        let ref = Database.database().reference().child("users").child(boxSelected.owner)
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let dict = snapshot.value as! [String:String]
+            let ImgRef = Storage.storage().reference(forURL: dict["profileImageUrl"]! )
+            ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                if let _error = error{
+                    print(_error)
+                    
+                } else {
+                    if let data  = data {
+                        let Img = UIImage(data: data)
+                        self.userImage.image = Img
+                    }
+                }
+            }
+            self.userName.text = dict["name"]
+            self.userID = dict["username"]
+        })
+        //Round the Imageview
+        self.userImage.layer.cornerRadius = self.userImage.frame.size.width / 2;
+        self.userImage.clipsToBounds = true;
+        self.userImage.layer.borderWidth = 1.5
+        self.userImage.layer.borderColor = UIColor.clear.cgColor
+        
+        
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){

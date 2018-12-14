@@ -171,6 +171,8 @@ class UserViewController: UIViewController {
         if segue.identifier == "itemsSegue"{
             let vc = segue.destination as? ItemsViewController
             vc?.boxSelected = self.boxSelected
+            vc?.itemsAddBtnIsHidden = false
+            vc?.contactViewIsHidden = true
         }
     }
     

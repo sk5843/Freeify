@@ -29,6 +29,7 @@ class HomeViewController: UIViewController, ModalHandler {
         else if(segue.identifier=="homeBundleItemsSegue"){
             let childVc = segue.destination as! ItemsViewController
             childVc.boxSelected = self.boxSelected
+            childVc.itemsAddBtnIsHidden = true
         }
         
     }
