@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 
+
 class HomeViewController: UIViewController, ModalHandler {
     func modalDismissed(range: Double, currLoc: CLLocation) {
         self.currentLoc = currLoc
@@ -21,10 +22,13 @@ class HomeViewController: UIViewController, ModalHandler {
     }
     
     
+    @IBOutlet weak var mapBtn: UIBarButtonItem!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="mapSegue"){
             let childVc = segue.destination as! MapViewController
             childVc.delegate = self
+            
         }
         else if(segue.identifier=="homeBundleItemsSegue"){
             let childVc = segue.destination as! ItemsViewController
@@ -41,6 +45,8 @@ class HomeViewController: UIViewController, ModalHandler {
     var currentLoc:CLLocation?
     var range: Double?
     var boxSelected:Box?
+    
+
     
     @IBOutlet weak var homeCollectionView: HomeCollectionView!
     

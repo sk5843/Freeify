@@ -7,6 +7,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - BubbleTransition (3.0.2)
   - DoneHUD (1.0.1)
   - FacebookCore (0.5.0):
     - Bolts (~> 1.9)
@@ -96,11 +97,13 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - RangeRadiusMKMapView (0.1.2)
+  - Spring (1.0.6)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - BATabBarController
+  - BubbleTransition (~> 3.0.0)
   - DoneHUD
   - FacebookCore
   - FacebookLogin
@@ -110,6 +113,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - ImagePicker
   - RangeRadiusMKMapView
+  - Spring (from `https://github.com/MengTo/Spring.git`)
   - SVProgressHUD
   - SwiftyJSON
 
@@ -117,6 +121,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BATabBarController
     - Bolts
+    - BubbleTransition
     - DoneHUD
     - FacebookCore
     - FacebookLogin
@@ -141,9 +146,19 @@ SPEC REPOS:
     - SVProgressHUD
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: fafd0b2e8d4d46405bd86fa7ba84bb7f73a20b13
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   BATabBarController: 5613abe7e9e840e4d47deecef6f5082187b24ecf
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  BubbleTransition: 6bdf7d8af460b5c3696beb0adbf4bcb17176ee11
   DoneHUD: 8c3dd92d9096f46168f7d6d8439ab0ec0c081915
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
   FacebookLogin: ebcf34714a1cb9f0759d9f071cfb01ed500996cf
@@ -165,9 +180,10 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   RangeRadiusMKMapView: 702f85a7e14da7252a31a152394473785a7c33e2
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 9094728062c9444f67956d9bc9e9bbcd0235ff22
+PODFILE CHECKSUM: 2828fc922e4c8aa0f18dd4255e0f952b6a1f8942
 
 COCOAPODS: 1.5.3

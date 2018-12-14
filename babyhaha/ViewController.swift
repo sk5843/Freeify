@@ -16,6 +16,7 @@ import SVProgressHUD
 import SwiftyJSON
 import FirebaseStorage
 import FirebaseDatabase
+import Spring
  
 //User info
 var name: String? = ""
@@ -27,18 +28,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginWithFb: UIButton!
 
+    @IBOutlet weak var signUpBtn: UIButton!
     
-
+    @IBOutlet weak var logInBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        roundIt(button: loginWithFb);
+        roundIt(button: loginWithFb)
+        roundIt(button: signUpBtn)
+        roundIt(button: logInBtn)
 
     }
     
     func roundIt(button: UIButton){
         button.layer.cornerRadius = loginWithFb.frame.height/2;
-        button.clipsToBounds = true;
+        button.clipsToBounds = true
     }
     
     @objc func update() {
@@ -49,6 +54,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func fbButtonPressed(_ sender: Any) {
+
         let loginManager = LoginManager()
         
         loginManager.logIn(readPermissions: [.publicProfile,.email], viewController: self) {(result) in

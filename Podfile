@@ -18,6 +18,7 @@ target 'babyhaha' do
   pod 'DoneHUD'
   pod 'ImagePicker'
   pod 'RangeRadiusMKMapView'
-
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'BubbleTransition', '~> 3.0.0'
   use_frameworks!
 end
