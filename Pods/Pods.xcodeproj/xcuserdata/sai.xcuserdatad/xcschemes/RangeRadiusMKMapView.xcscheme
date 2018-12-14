@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52DB43A3F2A6AE2DD61E7E4803524ECC"
+               BlueprintIdentifier = "1B3CCA309EF1750AB3BB2E3F3590C91E"
                BlueprintName = "RangeRadiusMKMapView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "RangeRadiusMKMapView.framework">

@@ -20,5 +20,6 @@ target 'babyhaha' do
   pod 'RangeRadiusMKMapView'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod 'BubbleTransition', '~> 3.0.0'
+  pod 'ExpandableButton'
   use_frameworks!
 end

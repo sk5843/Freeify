@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4FBF5C9683751C04B6A42B44C7DA3176"
-               BlueprintName = "SVProgressHUD"
+               BlueprintIdentifier = "4405C49D0D4BE4E610AA240464715C06"
+               BlueprintName = "ExpandableButton"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SVProgressHUD.framework">
+               BuildableName = "ExpandableButton.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

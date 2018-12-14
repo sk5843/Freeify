@@ -12,8 +12,10 @@ import Firebase
 import AVFoundation
 
 
+
 class ItemsViewController: UIViewController {
     
+    @IBOutlet weak var editButton: UIButton!
     
     @IBOutlet weak var contactView: UIView!
     
@@ -22,6 +24,8 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var userMessenger: UIButton!
+    
+    
     
     @IBAction func usermessengerButtonPressed(_ sender: UIButton) {
         animateButton(button: sender)
@@ -141,6 +145,7 @@ class ItemsViewController: UIViewController {
         self.userImage.layer.borderColor = UIColor.clear.cgColor
         
         
+        
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){
@@ -159,6 +164,22 @@ class ItemsViewController: UIViewController {
             self.ItemsCollectionVieww.reloadData()
         default:
             ItemsCollectionVieww.cancelInteractiveMovement()
+        }
+    }
+    func editPressed(){
+        //Refresh details
+        self.boxTitleLabel.text = boxSelected.title
+        self.boxCategoryLabel.text = "Category: "+boxSelected.category
+        self.boxDescription.text = boxSelected.description
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="editSegue"){
+            let vc = segue.destination as! AddViewController
+            vc.delegate = self
+            vc.editSeguetriggered = true
+            
+            
         }
     }
     
