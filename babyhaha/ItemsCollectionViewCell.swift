@@ -13,6 +13,8 @@ import Firebase
 class ItemsCollectionViewCell: UICollectionViewCell {
     
     var isAnimate: Bool! = true
+    var boxIndexCurrent:Int?
+    
     @IBAction func itemsRemBtnPressed(_ sender: UIButton) {
         let hitPoint = sender.convert(CGPoint.zero, to: itCView)
         let hitIndex = itCView!.indexPathForItem(at: hitPoint)

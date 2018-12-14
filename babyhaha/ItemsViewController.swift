@@ -12,7 +12,6 @@ import Firebase
 
 //Global variables
 var itCView: ItemsCollectionView?
-var boxIndexCurrent:Int?
 class ItemsViewController: UIViewController {
 
     @IBOutlet weak var boxTitleLabel: UILabel!
@@ -21,10 +20,9 @@ class ItemsViewController: UIViewController {
     
     @IBOutlet weak var boxDescription: UILabel!
     
-    var boxTitle:String?
-    var boxIndex:Int?
-    //var arr: [UIImage]?
-    var boxItemsArray = [UIImage]()
+    
+    var boxSelected:Box!
+    //var itemsArray=[UIImage]()
     var longPressedEnabled = false
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
@@ -42,29 +40,28 @@ class ItemsViewController: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         itCView = self.ItemsCollectionVieww
-        boxIndexCurrent = self.boxIndex
         //adding longpress gesture over UICollectionView
         var longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
         ItemsCollectionVieww.addGestureRecognizer(longPressGesture)
         //Init view
         initializeView()
-        getDataFromFirebase()
+        //getDataFromFirebase()
         
     }
     
     func initializeView(){
-        for box in Boxesarr{
-            if box.title == self.boxTitle{
-                self.boxTitleLabel.text = box.title
-                self.boxCategoryLabel.text = box.category
-                self.boxDescription.text = box.description
-            }
-        }
+        
+        self.boxTitleLabel.text = boxSelected.title
+        self.boxCategoryLabel.text = boxSelected.category
+        self.boxDescription.text = boxSelected.description
+        //self.itemsArray = boxSelected.items
+    
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){
@@ -92,18 +89,15 @@ class ItemsViewController: UIViewController {
 }
 extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if((boxItemsArray.count)>0){
-            return (boxItemsArray.count)
-        }
-        else{
-            return 0
-        }
+        
+            return boxSelected.items.count
+    
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as? ItemsCollectionViewCell
-        if((boxItemsArray.count)>0){
-            cell?.itemImageView.image = boxItemsArray[indexPath.row]
+        if(boxSelected.items.count>0){
+            cell?.itemImageView.image = boxSelected.items[indexPath.row]
             
         }
         if longPressedEnabled   {
@@ -137,24 +131,13 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
 }
 extension ItemsViewController: ImagePickerDelegate{
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        for box in Boxesarr{
-            if box.title == self.boxTitle{
-                box.items.append(contentsOf: images)
-                uploadToFirebase(items: images)
-                self.ItemsCollectionVieww.reloadData()
-            }
-        }
+        
+        uploadToFirebase(items: images)
         self.dismiss(animated: true, completion: nil)
     }
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        for box in Boxesarr{
-            if box.title == self.boxTitle{
-                box.items.append(contentsOf: images)
-                uploadToFirebase(items: images)
-                self.ItemsCollectionVieww.reloadData()
-            }
-        }
+        uploadToFirebase(items: images)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -163,8 +146,11 @@ extension ItemsViewController: ImagePickerDelegate{
     }
     
     func uploadToFirebase(items: [UIImage]){
+        //first add to local array and reload data
+        boxSelected.items.append(contentsOf: items)
+        self.ItemsCollectionVieww.reloadData()
         //All boxes SHOULD have a unique title
-        let ref = Storage.storage().reference().child("Items").child(self.boxTitle!)
+        let ref = Storage.storage().reference().child("Items").child(boxSelected.title)
         for image in items{
             let imageName = NSUUID().uuidString
             let storageRef = ref.child(imageName)
@@ -183,7 +169,7 @@ extension ItemsViewController: ImagePickerDelegate{
                         // Uh-oh, an error occurred!
                         return
                     }
-                    let ref2 = Database.database().reference().child("Boxes").child(self.boxTitle!).child("items")
+                    let ref2 = Database.database().reference().child("Boxes").child(self.boxSelected.title).child("items")
                     let autoID = ref2.childByAutoId().key
                     ref2.child(autoID!).setValue(url?.absoluteString)
                     
@@ -191,37 +177,9 @@ extension ItemsViewController: ImagePickerDelegate{
             }
             
             
-            
         }
         
         
-    }
-    func getDataFromFirebase(){
-        ref = Database.database().reference()
-        databasehandle = ref?.child("Boxes").child(self.boxTitle!).child("items").observe(.value, with: { snapshot in
-            
-            if !snapshot.exists() { return }
-            print(snapshot) // Its print all values including Snap (User)
-            
-            for child in snapshot.children {
-                let snap = child as! DataSnapshot
-                let ImgRef = Storage.storage().reference(forURL: snap.value as! String)
-                ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
-                    if let _error = error{
-                        print(_error)
-                    
-                    } else {
-                        if let data  = data {
-                            let Img = UIImage(data: data)
-                            self.boxItemsArray.append(Img!)
-                            self.ItemsCollectionVieww.reloadData()
-                        }
-                    }
-                }
-            }
-            
-            
-        })
     }
     
     

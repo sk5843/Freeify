@@ -26,6 +26,10 @@ class HomeViewController: UIViewController, ModalHandler {
             let childVc = segue.destination as! MapViewController
             childVc.delegate = self
         }
+        else if(segue.identifier=="homeBundleItemsSegue"){
+            let childVc = segue.destination as! ItemsViewController
+            childVc.boxSelected = self.boxSelected
+        }
         
     }
     
@@ -35,6 +39,7 @@ class HomeViewController: UIViewController, ModalHandler {
     var ref:DatabaseReference?
     var currentLoc:CLLocation?
     var range: Double?
+    var boxSelected:Box?
     
     @IBOutlet weak var homeCollectionView: HomeCollectionView!
     
@@ -64,6 +69,23 @@ class HomeViewController: UIViewController, ModalHandler {
                         let coverImg = UIImage(data: data)
                         
                         let gotBox = Box(title: datafir["title"]! as! String , category: datafir["category"]! as! String, tag: datafir["tag"]! as! String, coverImage:coverImg!, description:datafir["description"]! as! String, location: datafir["location"]! as! String, owner: datafir["owner"]! as! String)
+                        if((datafir["items"]) != nil){
+                            let dict = datafir["items"] as! [String:String]
+                            for (key,value) in dict{
+                                let ImgRef = Storage.storage().reference(forURL: value )
+                                ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                                    if let _error = error{
+                                        print(_error)
+                                        
+                                    } else {
+                                        if let data  = data {
+                                            let Img = UIImage(data: data)
+                                            gotBox.items.append(Img!)
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         self.allBundles.append(gotBox)
                         
                     }
@@ -111,7 +133,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "homeToItems", sender: self)
+        self.boxSelected = filteredBundles[indexPath.row]
+        performSegue(withIdentifier: "homeBundleItemsSegue", sender: self)
     }
     
     

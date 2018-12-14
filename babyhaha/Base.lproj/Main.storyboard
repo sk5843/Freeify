@@ -278,7 +278,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="homeCollectionView" destination="lO0-nK-GLm" id="YqB-qa-Cb5"/>
-                        <segue destination="tIT-R2-4Xk" kind="modal" identifier="homeToItems" id="Bfk-Us-kja"/>
+                        <segue destination="tIT-R2-4Xk" kind="modal" identifier="homeBundleItemsSegue" id="zpu-bB-qre"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBM-rB-Tdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -786,6 +786,6 @@ Using?</string>
         <image name="userSelected" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bfk-Us-kja"/>
+        <segue reference="zpu-bB-qre"/>
     </inferredMetricsTieBreakers>
 </document>

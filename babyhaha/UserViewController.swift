@@ -18,8 +18,7 @@ class UserViewController: UIViewController {
     var longPressedEnabled = false
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
-    var boxTitle:String?
-    var boxIndex:Int?
+    var boxSelected:Box?
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -141,10 +140,27 @@ class UserViewController: UIViewController {
                        let coverImg = UIImage(data: data)
                        
                         let gotBox = Box(title: datafir!["title"]! as! String , category: datafir!["category"]! as! String, tag: datafir!["tag"]! as! String, coverImage:coverImg!, description:datafir!["description"]! as! String, location: datafir!["location"]! as! String, owner: datafir!["owner"]! as! String)
-                        Boxesarr.append(gotBox)
-                        self.boxCollectionView.reloadData()
-                    }
+                        if((datafir?["items"]) != nil){
+                            let dict = datafir!["items"] as! [String:String]
+                            for (key,value) in dict{
+                                let ImgRef = Storage.storage().reference(forURL: value )
+                                ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                                    if let _error = error{
+                                        print(_error)
+                                        
+                                    } else {
+                                        if let data  = data {
+                                            let Img = UIImage(data: data)
+                                            gotBox.items.append(Img!)
+                                        }
+                                    }
+                                }
+                           }
+                        }
+                       Boxesarr.append(gotBox)
+                       self.boxCollectionView.reloadData()
                 }
+            }
             }
             
         })
@@ -154,10 +170,7 @@ class UserViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemsSegue"{
             let vc = segue.destination as? ItemsViewController
-            vc?.boxTitle = self.boxTitle
-            vc?.boxIndex = self.boxIndex
-            
-            
+            vc?.boxSelected = self.boxSelected
         }
     }
     
@@ -183,13 +196,7 @@ extension UserViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell!
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var cell = self.boxCollectionView.cellForItem(at: indexPath) as? ProfileBundleCell
-        self.boxTitle = cell?.boxTitle.text
-        for (index,element) in Boxesarr.enumerated(){
-            if element.title == cell?.boxTitle.text{
-                self.boxIndex = index
-            }
-        }
+        self.boxSelected = Boxesarr[indexPath.row]
         performSegue(withIdentifier: "itemsSegue", sender: self)
     }
     

@@ -9,15 +9,26 @@
 import UIKit
 import Firebase
 
+
+/**
+    Handles the search screen to search bundles filtered by category.
+ 
+    **IMPORTANT :** The search function works by filtering using the category of the bundle.
+    So while searching, search using the category, not the name of the bundle.
+ */
 class SearchViewController: UIViewController {
     
+    ///Stores all the bundles in our database
     var allBundles = [Box]()
+    /**Stores all the filtered bundles.
+    These are the bundles filtered by category, which will be displayed on the search screen.*/
     var filteredBundles = [Box]()
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
     
-
+    ///Reference to the searchbar where we type our search query
     @IBOutlet weak var searchBar: UISearchBar!
+    ///The table view which is populated with all the bundles that matches our search query. Each cell in this table view is a bundle.
     @IBOutlet weak var searchTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +37,7 @@ class SearchViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    ///Gets all the bundles in our Firebase database and puts it into an array of type "Box"
     func getDataFromFirebase(){
         
         ref = Database.database().reference()
@@ -58,6 +70,7 @@ class SearchViewController: UIViewController {
 
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredBundles.count
     }
@@ -79,6 +92,7 @@ extension SearchViewController: UISearchBarDelegate{
 
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        ///Filters the bundles based on category.
         filteredBundles = allBundles.filter({ box -> Bool in
             guard let text = searchBar.text else {return false}
             return box.category.lowercased().contains(text.lowercased())

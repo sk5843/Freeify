@@ -66,7 +66,7 @@ class AddViewController: UIViewController{
 
     @IBAction func addButtonPressed(_ sender: Any) {
         guard let uid =  Auth.auth().currentUser?.uid else { return }
-        var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc!, owner:uid )
+        var newBox: Box = Box(title: titleField.text!, category: categoryFirld.text!, tag: tagOfBox.text!, coverImage: uploadImageView.image!, description:descriptionField.text, location: userLoc ?? "", owner:uid )
         //Upload data to firebase and local array
         uploadToFirebase(box: newBox)
         //Clear text fields
@@ -107,8 +107,8 @@ class AddViewController: UIViewController{
                                 "tag": box.tag,
                                 "coverImage": downloadUrl.absoluteString,
                                 "description": box.description,
-                                "location": self.userLoc,
-                                "owner": box.owner] as! [String : String]
+                                "location": box.location,
+                                "owner": box.owner] 
                 Database.database().reference().child("Boxes").child(box.title).setValue(dictionaryValues)
                 
             }
