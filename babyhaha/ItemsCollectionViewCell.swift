@@ -10,19 +10,23 @@ import UIKit
 import ImagePicker
 import Firebase
 
+protocol ItemsCellDelegate{
+    
+    func itemsRemBtnPressed(index: Int)
+}
+
 class ItemsCollectionViewCell: UICollectionViewCell {
     
     var isAnimate: Bool! = true
     var boxIndexCurrent:Int?
+    var delegate: ItemsViewController!
+    
     
     @IBAction func itemsRemBtnPressed(_ sender: UIButton) {
-        let hitPoint = sender.convert(CGPoint.zero, to: itCView)
-        let hitIndex = itCView!.indexPathForItem(at: hitPoint)
-        
-        //remove the image and refresh the collection view
-        Boxesarr[boxIndexCurrent!].items.remove(at: (hitIndex?.row)!)
-        itCView!.reloadData()
+        delegate.itemsRemBtnPressed(index: sender.tag)
     }
+    
+    
     
     @IBOutlet weak var itemsRemBtn: UIButton!
     @IBOutlet weak var itemImageView: UIImageView!

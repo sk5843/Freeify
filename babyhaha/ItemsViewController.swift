@@ -10,8 +10,7 @@ import UIKit
 import ImagePicker
 import Firebase
 
-//Global variables
-var itCView: ItemsCollectionView?
+
 class ItemsViewController: UIViewController {
 
     @IBOutlet weak var boxTitleLabel: UILabel!
@@ -45,7 +44,6 @@ class ItemsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        itCView = self.ItemsCollectionVieww
         //adding longpress gesture over UICollectionView
         var longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
         ItemsCollectionVieww.addGestureRecognizer(longPressGesture)
@@ -96,8 +94,10 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCell", for: indexPath) as? ItemsCollectionViewCell
+        cell?.delegate = self
         if(boxSelected.items.count>0){
             cell?.itemImageView.image = boxSelected.items[indexPath.row]
+            cell?.itemsRemBtn.tag = indexPath.row
             
         }
         if longPressedEnabled   {
@@ -185,3 +185,34 @@ extension ItemsViewController: ImagePickerDelegate{
     
 }
 
+extension ItemsViewController: ItemsCellDelegate{
+    func itemsRemBtnPressed(index: Int) {
+        //Remove from local array
+        boxSelected.items.remove(at: index)
+        self.ItemsCollectionVieww.reloadData()
+        //remove from Database
+        removeItemFromDatabase(at: index)
+        
+    }
+    
+    func removeItemFromDatabase(at: Int){
+        print(at)
+        var i = 0
+        let ref = Database.database().reference().child("Boxes").child(boxSelected.title).child("items")
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            print(snapshot)
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                if(i==at){
+                    print(snap.key)
+                    ref.child(snap.key).removeValue()
+                    break
+                }
+                i+=1
+            }
+        })
+        
+    }
+    
+    
+}
