@@ -12,7 +12,7 @@
         <!--Search View Controller-->
         <scene sceneID="gUK-dv-fa1">
             <objects>
-                <viewController id="a6P-LQ-BuX" customClass="SearchViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a6P-LQ-BuX" customClass="SearchViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eyH-yn-57M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="133" id="B5b-gu-V2F" customClass="SearchTableViewCell" customModule="babyhaha" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchCell" rowHeight="133" id="B5b-gu-V2F" customClass="SearchTableViewCell" customModule="Freeify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="375" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B5b-gu-V2F" id="ZJJ-b2-Hiz">
@@ -94,7 +94,7 @@
         <!--addbox-->
         <scene sceneID="guV-Xs-bMJ">
             <objects>
-                <viewController title="addbox" id="iyU-na-Ff8" customClass="AddViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="addbox" id="iyU-na-Ff8" customClass="AddViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OfL-Qa-I1T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
         <!--Home View Controller-->
         <scene sceneID="cB5-br-tmn">
             <objects>
-                <viewController id="0qK-kF-mcl" customClass="HomeViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0qK-kF-mcl" customClass="HomeViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bM3-es-25c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +222,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO0-nK-GLm" customClass="HomeCollectionView" customModule="babyhaha" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO0-nK-GLm" customClass="HomeCollectionView" customModule="Freeify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="168" width="375" height="561"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,7 +233,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeBundleCell" id="NYJ-Be-LQC" customClass="HomeCollectionViewCell" customModule="babyhaha" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeBundleCell" id="NYJ-Be-LQC" customClass="HomeCollectionViewCell" customModule="Freeify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="149"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -290,7 +290,7 @@
         <!--Map View Controller-->
         <scene sceneID="W3Y-xG-YVB">
             <objects>
-                <viewController id="0v1-Qz-kUG" customClass="MapViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0v1-Qz-kUG" customClass="MapViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14V-w8-1Lg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
         <!--Chat View Controller-->
         <scene sceneID="jBt-X5-HHs">
             <objects>
-                <viewController id="wy0-ZF-4zY" customClass="ChatViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wy0-ZF-4zY" customClass="ChatViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tcn-HT-xk7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,7 +323,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="134" id="vTC-GJ-CsU" customClass="ChatViewCell" customModule="babyhaha" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="134" id="vTC-GJ-CsU" customClass="ChatViewCell" customModule="Freeify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vTC-GJ-CsU" id="lUb-49-Tpv">
@@ -399,7 +399,7 @@
         <!--Items View Controller-->
         <scene sceneID="xuC-gV-p93">
             <objects>
-                <viewController id="tIT-R2-4Xk" customClass="ItemsViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tIT-R2-4Xk" customClass="ItemsViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DsW-MA-Ugk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +409,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.72156862749999995" green="0.23921568630000001" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qDA-u4-Obt" customClass="ItemsCollectionView" customModule="babyhaha" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qDA-u4-Obt" customClass="ItemsCollectionView" customModule="Freeify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="90" width="375" height="344"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,7 +420,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemsCell" id="7kx-2b-NBt" customClass="ItemsCollectionViewCell" customModule="babyhaha" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemsCell" id="7kx-2b-NBt" customClass="ItemsCollectionViewCell" customModule="Freeify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="45.666666666666664" width="253" height="253"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -479,7 +479,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playstation 4 games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t6k-zP-djT">
-                                <rect key="frame" x="16" y="442" width="275" height="36"/>
+                                <rect key="frame" x="16" y="442" width="353" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -568,7 +568,7 @@ Using?</string>
         <!--User View Controller-->
         <scene sceneID="qdD-7e-0zv">
             <objects>
-                <viewController id="gWI-tv-Nk0" customClass="UserViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gWI-tv-Nk0" customClass="UserViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ke8-IZ-3Rg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -638,7 +638,7 @@ Using?</string>
                                     <action selector="logOutButton:" destination="gWI-tv-Nk0" eventType="touchUpInside" id="vAB-uL-X9o"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MK7-uB-aYw" customClass="ProfileBundlesCollection" customModule="babyhaha" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MK7-uB-aYw" customClass="ProfileBundlesCollection" customModule="Freeify" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="408" width="375" height="321"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -649,7 +649,7 @@ Using?</string>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileBundleCell" id="BaV-RQ-VNd" customClass="ProfileBundleCell" customModule="babyhaha" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileBundleCell" id="BaV-RQ-VNd" customClass="ProfileBundleCell" customModule="Freeify" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="149"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -739,7 +739,7 @@ Using?</string>
         <!--Tab View Controller-->
         <scene sceneID="BvY-x3-N7Q">
             <objects>
-                <tabBarController id="iax-Ua-V1y" customClass="TabViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="iax-Ua-V1y" customClass="TabViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8HA-w0-Cb2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -761,7 +761,7 @@ Using?</string>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="babyhaha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Freeify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

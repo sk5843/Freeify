@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     @IBAction func fbButtonPressed(_ sender: Any) {
 
         let loginManager = LoginManager()
-        
+        loginManager.logOut()
         loginManager.logIn(readPermissions: [.publicProfile,.email], viewController: self) {(result) in
             switch result{
             case.success(grantedPermissions: _, declinedPermissions: _, token: _):
@@ -207,6 +207,7 @@ class ViewController: UIViewController {
     @objc func handleLogout() {
         
         do {
+            
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)

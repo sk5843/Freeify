@@ -40,7 +40,7 @@ class ItemsViewController: UIViewController {
         animateButton(button: sender)
         let systemSoundID: SystemSoundID = 1102
         AudioServicesPlaySystemSound (systemSoundID)
-        var urlString = "fb-messenger://user-thread/"+userID!
+        var urlString = "fb-messenger://user-thread/"+self.userID!
         if let url = URL(string: urlString) {
             
             // Attempt to open in Messenger App first

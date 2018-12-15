@@ -19,6 +19,7 @@ class UserViewController: UIViewController {
     var databasehandle: DatabaseHandle?
     var ref:DatabaseReference?
     var boxSelected:Box?
+    var allBundles = [Box]()
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -64,7 +65,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var bundlesGiven: UILabel!
     @IBOutlet weak var bundlesGivenCount: UILabel!
     @IBAction func fbButtonPressed(_ sender: Any) {
-        let fbUrl: String? = "fb://profile/100000257390940"
+        let fbUrl: String? = "fb://profile?app_scoped_user_id="+username!
         if let url = URL(string: fbUrl!) {
             if #available(iOS 10, *) {
                 UIApplication.shared.open(url, options: [:],completionHandler: { (success) in
@@ -85,6 +86,7 @@ class UserViewController: UIViewController {
         boxCollectionViewgl = boxCollectionView
         //getData from firebase
         getDataFromFirebase()
+        filterBundles()
         //Initial set up of the profile picture frame (Round)
         self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
         self.profilePicture.clipsToBounds = true;
@@ -100,6 +102,15 @@ class UserViewController: UIViewController {
         //adding longpress gesture over UICollectionView
         var longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
         boxCollectionView.addGestureRecognizer(longPressGesture)
+    }
+    
+    func filterBundles(){
+        Boxesarr = []
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Boxesarr = allBundles.filter({ box -> Bool in
+            return box.owner == uid
+        })
+        self.boxCollectionView.reloadData()
     }
     
     @objc func longTap(_ gesture: UIGestureRecognizer){
@@ -158,8 +169,8 @@ class UserViewController: UIViewController {
                                 }
                            }
                         }
-                       Boxesarr.append(gotBox)
-                       self.boxCollectionView.reloadData()
+                        self.allBundles.append(gotBox)
+                        self.filterBundles()
                 }
             }
             }
