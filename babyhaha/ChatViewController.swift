@@ -8,6 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
+
+
 class ChatViewController: UIViewController {
     var arrayOfUserImages = ["fadri","soda","duo"]
     var arrayOfUsers = ["Fadri Hober", "Soda Pilipda", "Duo Zheng"]

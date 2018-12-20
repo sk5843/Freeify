@@ -9,6 +9,9 @@
 import UIKit
 import Firebase
 import CoreLocation
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class HomeViewController: UIViewController, ModalHandler {
@@ -76,8 +79,9 @@ class HomeViewController: UIViewController, ModalHandler {
                 } else {
                     if let data  = data {
                         let coverImg = UIImage(data: data)
-                        
+                        //Retrieve the bundle
                         let gotBox = Box(title: datafir["title"]! as! String , category: datafir["category"]! as! String, tag: datafir["tag"]! as! String, coverImage:coverImg!, description:datafir["description"]! as! String, location: datafir["location"]! as! String, owner: datafir["owner"]! as! String)
+                        //Retrieve the bundle's images
                         if((datafir["items"]) != nil){
                             let dict = datafir["items"] as! [String:String]
                             for (key,value) in dict{
@@ -106,7 +110,7 @@ class HomeViewController: UIViewController, ModalHandler {
     func filterBundlesbyLocation(){
         filteredBundles = allBundles.filter({ box -> Bool in
             
-            return isWithinRange(box: box)
+            return isWithinRange(box: box) && notMyOwnBox(box: box)
         })
     }
     
@@ -117,6 +121,15 @@ class HomeViewController: UIViewController, ModalHandler {
         let boxLocation = CLLocation(latitude: lat!, longitude: long!)
         let distanceInMeters = boxLocation.distance(from: currentLoc!) // result is in meters
         if(distanceInMeters > range! ){
+            return false
+        }
+        else{
+            return true
+        }
+    }
+    func notMyOwnBox(box: Box) -> Bool{
+        guard let uid = Auth.auth().currentUser?.uid else {return false}
+        if(box.owner == uid){
             return false
         }
         else{

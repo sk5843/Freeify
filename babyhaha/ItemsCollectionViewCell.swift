@@ -9,6 +9,9 @@
 import UIKit
 import ImagePicker
 import Firebase
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 protocol ItemsCellDelegate{
     

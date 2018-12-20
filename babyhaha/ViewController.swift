@@ -14,6 +14,9 @@ import FacebookLogin
 import FBSDKLoginKit
 import SVProgressHUD
 import SwiftyJSON
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseDatabase
 import FirebaseStorage
 import FirebaseDatabase
 import Spring
@@ -28,16 +31,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var loginWithFb: UIButton!
 
-    @IBOutlet weak var signUpBtn: UIButton!
-    
-    @IBOutlet weak var logInBtn: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         roundIt(button: loginWithFb)
-        roundIt(button: signUpBtn)
-        roundIt(button: logInBtn)
+        
 
     }
     
@@ -104,6 +104,7 @@ class ViewController: UIViewController {
         
     }
     
+    //Fetch the user's Facebook information
     fileprivate func fetchFacebookUser() {
         print("entered fetch")
         let graphRequestConnection = GraphRequestConnection()
@@ -144,6 +145,7 @@ class ViewController: UIViewController {
         
     }
     
+    //Save the user's Facebook information in Firebase
     fileprivate func saveUserIntoFirebaseDatabase() {
         print("Entered this")
         guard let uid = Auth.auth().currentUser?.uid,
@@ -196,6 +198,7 @@ class ViewController: UIViewController {
         
     }
     
+    //Check if the user is logged into Facebook
     func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)

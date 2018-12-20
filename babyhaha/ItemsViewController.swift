@@ -10,6 +10,9 @@ import UIKit
 import ImagePicker
 import Firebase
 import AVFoundation
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class ItemsViewController: UIViewController {
@@ -94,13 +97,14 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var itemsAddbtn: UIButton!
 
+    //Add item
     @IBAction func itemsAddPressed(_ sender: Any) {
         let imagePickerController = ImagePickerController()
         imagePickerController.delegate = self as? ImagePickerDelegate
         present(imagePickerController, animated: true, completion: nil)
         
     }
-    
+    //Go back
     @IBAction func backBtnPressed(_ sender: Any) {
         self.contactView.isHidden = false
         self.itemsAddbtn.isHidden = false
@@ -125,8 +129,9 @@ class ItemsViewController: UIViewController {
         if(contactViewIsHidden){
             contactView.isHidden = true
         }
-         doneBtn.isHidden = true
+        doneBtn.isHidden = true
         self.boxDescription.layer.borderColor = UIColor.black.cgColor
+        //Display the bundle information
         self.boxTitleLabel.text = boxSelected.title
         self.boxCategoryLabel.text = "Category: "+boxSelected.category
         self.boxDescription.text = boxSelected.description

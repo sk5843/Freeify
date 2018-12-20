@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
+
 
 
 var boxCollectionViewgl: UICollectionView?
@@ -62,8 +66,8 @@ class UserViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var fbButton: UIButton!
-    @IBOutlet weak var bundlesGiven: UILabel!
-    @IBOutlet weak var bundlesGivenCount: UILabel!
+    
+    
     @IBAction func fbButtonPressed(_ sender: Any) {
         let fbUrl: String? = "fb://profile?app_scoped_user_id="+username!
         if let url = URL(string: fbUrl!) {
@@ -136,44 +140,50 @@ class UserViewController: UIViewController {
     
     
     func getDataFromFirebase(){
-        
+        print("called")
+        self.allBundles = []
         ref = Database.database().reference()
-        databasehandle = ref?.child("Boxes").observe(.childAdded, with: { snapshot in
+        ref?.child("Boxes").observeSingleEvent(of: .value, with: { snapshot in
             
             if !snapshot.exists() { return }
             print(snapshot) // Its print all values including Snap (User)
-            var datafir = snapshot.value as? [String:Any]
-            Storage.storage().reference().child("boxItems").child(datafir!["title"]! as! String).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
-                if let _error = error{
-                    print(_error)
-                    
-                } else {
-                    if let data  = data {
-                       let coverImg = UIImage(data: data)
-                       
-                        let gotBox = Box(title: datafir!["title"]! as! String , category: datafir!["category"]! as! String, tag: datafir!["tag"]! as! String, coverImage:coverImg!, description:datafir!["description"]! as! String, location: datafir!["location"]! as! String, owner: datafir!["owner"]! as! String)
-                        if((datafir?["items"]) != nil){
-                            let dict = datafir!["items"] as! [String:String]
-                            for (key,value) in dict{
-                                let ImgRef = Storage.storage().reference(forURL: value )
-                                ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
-                                    if let _error = error{
-                                        print(_error)
-                                        
-                                    } else {
-                                        if let data  = data {
-                                            let Img = UIImage(data: data)
-                                            gotBox.items.append(Img!)
+            for child in snapshot.children{
+                let data = child as! DataSnapshot
+                var datafir = data.value as! [String:Any]
+                Storage.storage().reference().child("boxItems").child(datafir["title"]! as! String).getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                    if let _error = error{
+                        print(_error)
+                        
+                    } else {
+                        if let data  = data {
+                            let coverImg = UIImage(data: data)
+                            //Retrieve the bundle
+                            let gotBox = Box(title: datafir["title"]! as! String , category: datafir["category"]! as! String, tag: datafir["tag"]! as! String, coverImage:coverImg!, description:datafir["description"]! as! String, location: datafir["location"]! as! String, owner: datafir["owner"]! as! String)
+                            if((datafir["items"]) != nil){
+                                let dict = datafir["items"] as! [String:String]
+                                //Retrieve the images for the bundle
+                                for (key,value) in dict{
+                                    let ImgRef = Storage.storage().reference(forURL: value )
+                                    ImgRef.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+                                        if let _error = error{
+                                            print(_error)
+                                            
+                                        } else {
+                                            if let data  = data {
+                                                let Img = UIImage(data: data)
+                                                gotBox.items.append(Img!)
+                                            }
                                         }
                                     }
                                 }
-                           }
+                            }
+                            self.allBundles.append(gotBox)
+                            self.filterBundles()
                         }
-                        self.allBundles.append(gotBox)
-                        self.filterBundles()
+                    }
                 }
             }
-            }
+            
             
         })
     }
@@ -185,6 +195,11 @@ class UserViewController: UIViewController {
             vc?.boxSelected = self.boxSelected
             vc?.itemsAddBtnIsHidden = false
             vc?.contactViewIsHidden = true
+        }
+        if segue.identifier == "addBoxSegue"{
+            let vc2 = segue.destination as? AddViewController
+            vc2?.delegate = self
+            
         }
     }
     

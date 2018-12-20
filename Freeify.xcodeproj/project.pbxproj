@@ -11,6 +11,23 @@
 		3215904821B42740006C118C /* ItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904721B42740006C118C /* ItemsCollectionViewCell.swift */; };
 		3215904C21B428A3006C118C /* ItemsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904B21B428A3006C118C /* ItemsCollectionView.swift */; };
 		3215904E21B568EA006C118C /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3215904D21B568EA006C118C /* ChatViewCell.swift */; };
+		3248BFF821CAFFD00055E18B /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE221CAFFD00055E18B /* IQTextView.swift */; };
+		3248BFF921CAFFD00055E18B /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE421CAFFD00055E18B /* IQPreviousNextView.swift */; };
+		3248BFFA21CAFFD00055E18B /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE521CAFFD00055E18B /* IQTitleBarButtonItem.swift */; };
+		3248BFFB21CAFFD00055E18B /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE621CAFFD00055E18B /* IQBarButtonItem.swift */; };
+		3248BFFC21CAFFD00055E18B /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE721CAFFD00055E18B /* IQToolbar.swift */; };
+		3248BFFD21CAFFD00055E18B /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE821CAFFD00055E18B /* IQUIView+IQKeyboardToolbar.swift */; };
+		3248BFFE21CAFFD00055E18B /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFE921CAFFD00055E18B /* IQInvocation.swift */; };
+		3248BFFF21CAFFD00055E18B /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFEB21CAFFD00055E18B /* IQKeyboardManagerConstantsInternal.swift */; };
+		3248C00021CAFFD00055E18B /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFEC21CAFFD00055E18B /* IQKeyboardManagerConstants.swift */; };
+		3248C00121CAFFD00055E18B /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3248BFEE21CAFFD00055E18B /* IQKeyboardManager.bundle */; };
+		3248C00221CAFFD00055E18B /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFEF21CAFFD00055E18B /* IQKeyboardReturnKeyHandler.swift */; };
+		3248C00321CAFFD00055E18B /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF021CAFFD00055E18B /* IQKeyboardManager.swift */; };
+		3248C00421CAFFD00055E18B /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF321CAFFD00055E18B /* IQUIScrollView+Additions.swift */; };
+		3248C00521CAFFD00055E18B /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF421CAFFD00055E18B /* IQUIViewController+Additions.swift */; };
+		3248C00621CAFFD00055E18B /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF521CAFFD00055E18B /* IQUITextFieldView+Additions.swift */; };
+		3248C00721CAFFD00055E18B /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF621CAFFD00055E18B /* IQUIView+Hierarchy.swift */; };
+		3248C00821CAFFD00055E18B /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3248BFF721CAFFD00055E18B /* IQNSArray+Sort.swift */; };
 		327A223521BEC72000477448 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327A223421BEC72000477448 /* SearchTableViewCell.swift */; };
 		32942CFB21A3979300B2A51C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942CFA21A3979300B2A51C /* SearchViewController.swift */; };
 		32942CFD21A397A100B2A51C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942CFC21A397A100B2A51C /* ChatViewController.swift */; };
@@ -19,6 +36,31 @@
 		32942D0521A60D7E00B2A51C /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32942D0421A60D7E00B2A51C /* AddViewController.swift */; };
 		32BCFFA321B2C74C002E1A7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32BCFFA221B2C74C002E1A7D /* GoogleService-Info.plist */; };
 		32BCFFA521B2CBA7002E1A7D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BCFFA421B2CBA7002E1A7D /* Box.swift */; };
+		32C1D45521CB05DE00ED1C5D /* ValidatorDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43921CB05DE00ED1C5D /* ValidatorDictionary.swift */; };
+		32C1D45621CB05DE00ED1C5D /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43A21CB05DE00ED1C5D /* Validator.swift */; };
+		32C1D45721CB05DE00ED1C5D /* ValidationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43B21CB05DE00ED1C5D /* ValidationDelegate.swift */; };
+		32C1D45821CB05DE00ED1C5D /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43C21CB05DE00ED1C5D /* Validatable.swift */; };
+		32C1D45921CB05DE00ED1C5D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43D21CB05DE00ED1C5D /* ValidationError.swift */; };
+		32C1D45A21CB05DE00ED1C5D /* FullNameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D43F21CB05DE00ED1C5D /* FullNameRule.swift */; };
+		32C1D45B21CB05DE00ED1C5D /* CharacterSetRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44021CB05DE00ED1C5D /* CharacterSetRule.swift */; };
+		32C1D45C21CB05DE00ED1C5D /* PasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44121CB05DE00ED1C5D /* PasswordRule.swift */; };
+		32C1D45D21CB05DE00ED1C5D /* ExactLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44221CB05DE00ED1C5D /* ExactLengthRule.swift */; };
+		32C1D45E21CB05DE00ED1C5D /* ConfirmRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44321CB05DE00ED1C5D /* ConfirmRule.swift */; };
+		32C1D45F21CB05DE00ED1C5D /* MinLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44421CB05DE00ED1C5D /* MinLengthRule.swift */; };
+		32C1D46021CB05DE00ED1C5D /* FloatRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44521CB05DE00ED1C5D /* FloatRule.swift */; };
+		32C1D46121CB05DE00ED1C5D /* MaxLengthRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44621CB05DE00ED1C5D /* MaxLengthRule.swift */; };
+		32C1D46221CB05DE00ED1C5D /* RegexRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44721CB05DE00ED1C5D /* RegexRule.swift */; };
+		32C1D46321CB05DE00ED1C5D /* ZipCodeRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44821CB05DE00ED1C5D /* ZipCodeRule.swift */; };
+		32C1D46421CB05DE00ED1C5D /* HexColorRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44921CB05DE00ED1C5D /* HexColorRule.swift */; };
+		32C1D46521CB05DE00ED1C5D /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44A21CB05DE00ED1C5D /* EmailRule.swift */; };
+		32C1D46621CB05DE00ED1C5D /* AlphaNumericRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44B21CB05DE00ED1C5D /* AlphaNumericRule.swift */; };
+		32C1D46721CB05DE00ED1C5D /* PhoneNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44C21CB05DE00ED1C5D /* PhoneNumberRule.swift */; };
+		32C1D46821CB05DE00ED1C5D /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44D21CB05DE00ED1C5D /* Rule.swift */; };
+		32C1D46921CB05DE00ED1C5D /* RequiredRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44E21CB05DE00ED1C5D /* RequiredRule.swift */; };
+		32C1D46A21CB05DE00ED1C5D /* IPV4Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D44F21CB05DE00ED1C5D /* IPV4Rule.swift */; };
+		32C1D46B21CB05DE00ED1C5D /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D45021CB05DE00ED1C5D /* ValidationRule.swift */; };
+		32C1D46C21CB05DE00ED1C5D /* AlphaRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D45121CB05DE00ED1C5D /* AlphaRule.swift */; };
+		32C1D46D21CB05DE00ED1C5D /* ISBNRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C1D45221CB05DE00ED1C5D /* ISBNRule.swift */; };
 		32D6A4FB21BF3F5B00D3231D /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6A4FA21BF3F5B00D3231D /* HomeCollectionView.swift */; };
 		32D6A4FD21BF3F7100D3231D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D6A4FC21BF3F7100D3231D /* HomeCollectionViewCell.swift */; };
 		32DF607121B9CA210031870B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF607021B9CA210031870B /* MapViewController.swift */; };
@@ -42,6 +84,24 @@
 		3215904721B42740006C118C /* ItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionViewCell.swift; sourceTree = "<group>"; };
 		3215904B21B428A3006C118C /* ItemsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionView.swift; sourceTree = "<group>"; };
 		3215904D21B568EA006C118C /* ChatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
+		3248BFE221CAFFD00055E18B /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
+		3248BFE421CAFFD00055E18B /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
+		3248BFE521CAFFD00055E18B /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		3248BFE621CAFFD00055E18B /* IQBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQBarButtonItem.swift; sourceTree = "<group>"; };
+		3248BFE721CAFFD00055E18B /* IQToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQToolbar.swift; sourceTree = "<group>"; };
+		3248BFE821CAFFD00055E18B /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		3248BFE921CAFFD00055E18B /* IQInvocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQInvocation.swift; sourceTree = "<group>"; };
+		3248BFEB21CAFFD00055E18B /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		3248BFEC21CAFFD00055E18B /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		3248BFEE21CAFFD00055E18B /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		3248BFEF21CAFFD00055E18B /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
+		3248BFF021CAFFD00055E18B /* IQKeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQKeyboardManager.swift; sourceTree = "<group>"; };
+		3248BFF121CAFFD00055E18B /* IQKeyboardManagerSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQKeyboardManagerSwift.h; sourceTree = "<group>"; };
+		3248BFF321CAFFD00055E18B /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		3248BFF421CAFFD00055E18B /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		3248BFF521CAFFD00055E18B /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		3248BFF621CAFFD00055E18B /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
+		3248BFF721CAFFD00055E18B /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		327A223421BEC72000477448 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		32942CFA21A3979300B2A51C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		32942CFC21A397A100B2A51C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +110,33 @@
 		32942D0421A60D7E00B2A51C /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		32BCFFA221B2C74C002E1A7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32BCFFA421B2CBA7002E1A7D /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		32C1D43921CB05DE00ED1C5D /* ValidatorDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorDictionary.swift; sourceTree = "<group>"; };
+		32C1D43A21CB05DE00ED1C5D /* Validator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		32C1D43B21CB05DE00ED1C5D /* ValidationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationDelegate.swift; sourceTree = "<group>"; };
+		32C1D43C21CB05DE00ED1C5D /* Validatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validatable.swift; sourceTree = "<group>"; };
+		32C1D43D21CB05DE00ED1C5D /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		32C1D43F21CB05DE00ED1C5D /* FullNameRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullNameRule.swift; sourceTree = "<group>"; };
+		32C1D44021CB05DE00ED1C5D /* CharacterSetRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSetRule.swift; sourceTree = "<group>"; };
+		32C1D44121CB05DE00ED1C5D /* PasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordRule.swift; sourceTree = "<group>"; };
+		32C1D44221CB05DE00ED1C5D /* ExactLengthRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExactLengthRule.swift; sourceTree = "<group>"; };
+		32C1D44321CB05DE00ED1C5D /* ConfirmRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmRule.swift; sourceTree = "<group>"; };
+		32C1D44421CB05DE00ED1C5D /* MinLengthRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinLengthRule.swift; sourceTree = "<group>"; };
+		32C1D44521CB05DE00ED1C5D /* FloatRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRule.swift; sourceTree = "<group>"; };
+		32C1D44621CB05DE00ED1C5D /* MaxLengthRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxLengthRule.swift; sourceTree = "<group>"; };
+		32C1D44721CB05DE00ED1C5D /* RegexRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexRule.swift; sourceTree = "<group>"; };
+		32C1D44821CB05DE00ED1C5D /* ZipCodeRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeRule.swift; sourceTree = "<group>"; };
+		32C1D44921CB05DE00ED1C5D /* HexColorRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexColorRule.swift; sourceTree = "<group>"; };
+		32C1D44A21CB05DE00ED1C5D /* EmailRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
+		32C1D44B21CB05DE00ED1C5D /* AlphaNumericRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaNumericRule.swift; sourceTree = "<group>"; };
+		32C1D44C21CB05DE00ED1C5D /* PhoneNumberRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumberRule.swift; sourceTree = "<group>"; };
+		32C1D44D21CB05DE00ED1C5D /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		32C1D44E21CB05DE00ED1C5D /* RequiredRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequiredRule.swift; sourceTree = "<group>"; };
+		32C1D44F21CB05DE00ED1C5D /* IPV4Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPV4Rule.swift; sourceTree = "<group>"; };
+		32C1D45021CB05DE00ED1C5D /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
+		32C1D45121CB05DE00ED1C5D /* AlphaRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaRule.swift; sourceTree = "<group>"; };
+		32C1D45221CB05DE00ED1C5D /* ISBNRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISBNRule.swift; sourceTree = "<group>"; };
+		32C1D45321CB05DE00ED1C5D /* SwiftValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftValidator.h; sourceTree = "<group>"; };
+		32C1D45421CB05DE00ED1C5D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32D6A4FA21BF3F5B00D3231D /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		32D6A4FC21BF3F7100D3231D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		32DF607021B9CA210031870B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -93,9 +180,126 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		3248BFE021CAFFD00055E18B /* IQKeyboardManagerSwift */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFE121CAFFD00055E18B /* IQTextView */,
+				3248BFE321CAFFD00055E18B /* IQToolbar */,
+				3248BFEA21CAFFD00055E18B /* Constants */,
+				3248BFED21CAFFD00055E18B /* Resources */,
+				3248BFEF21CAFFD00055E18B /* IQKeyboardReturnKeyHandler.swift */,
+				3248BFF021CAFFD00055E18B /* IQKeyboardManager.swift */,
+				3248BFF121CAFFD00055E18B /* IQKeyboardManagerSwift.h */,
+				3248BFF221CAFFD00055E18B /* Categories */,
+			);
+			path = IQKeyboardManagerSwift;
+			sourceTree = "<group>";
+		};
+		3248BFE121CAFFD00055E18B /* IQTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFE221CAFFD00055E18B /* IQTextView.swift */,
+			);
+			path = IQTextView;
+			sourceTree = "<group>";
+		};
+		3248BFE321CAFFD00055E18B /* IQToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFE421CAFFD00055E18B /* IQPreviousNextView.swift */,
+				3248BFE521CAFFD00055E18B /* IQTitleBarButtonItem.swift */,
+				3248BFE621CAFFD00055E18B /* IQBarButtonItem.swift */,
+				3248BFE721CAFFD00055E18B /* IQToolbar.swift */,
+				3248BFE821CAFFD00055E18B /* IQUIView+IQKeyboardToolbar.swift */,
+				3248BFE921CAFFD00055E18B /* IQInvocation.swift */,
+			);
+			path = IQToolbar;
+			sourceTree = "<group>";
+		};
+		3248BFEA21CAFFD00055E18B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFEB21CAFFD00055E18B /* IQKeyboardManagerConstantsInternal.swift */,
+				3248BFEC21CAFFD00055E18B /* IQKeyboardManagerConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		3248BFED21CAFFD00055E18B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFEE21CAFFD00055E18B /* IQKeyboardManager.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3248BFF221CAFFD00055E18B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3248BFF321CAFFD00055E18B /* IQUIScrollView+Additions.swift */,
+				3248BFF421CAFFD00055E18B /* IQUIViewController+Additions.swift */,
+				3248BFF521CAFFD00055E18B /* IQUITextFieldView+Additions.swift */,
+				3248BFF621CAFFD00055E18B /* IQUIView+Hierarchy.swift */,
+				3248BFF721CAFFD00055E18B /* IQNSArray+Sort.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		32C1D43721CB05DE00ED1C5D /* SwiftValidator */ = {
+			isa = PBXGroup;
+			children = (
+				32C1D43821CB05DE00ED1C5D /* Core */,
+				32C1D43E21CB05DE00ED1C5D /* Rules */,
+				32C1D45321CB05DE00ED1C5D /* SwiftValidator.h */,
+				32C1D45421CB05DE00ED1C5D /* Info.plist */,
+			);
+			path = SwiftValidator;
+			sourceTree = "<group>";
+		};
+		32C1D43821CB05DE00ED1C5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				32C1D43921CB05DE00ED1C5D /* ValidatorDictionary.swift */,
+				32C1D43A21CB05DE00ED1C5D /* Validator.swift */,
+				32C1D43B21CB05DE00ED1C5D /* ValidationDelegate.swift */,
+				32C1D43C21CB05DE00ED1C5D /* Validatable.swift */,
+				32C1D43D21CB05DE00ED1C5D /* ValidationError.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		32C1D43E21CB05DE00ED1C5D /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				32C1D43F21CB05DE00ED1C5D /* FullNameRule.swift */,
+				32C1D44021CB05DE00ED1C5D /* CharacterSetRule.swift */,
+				32C1D44121CB05DE00ED1C5D /* PasswordRule.swift */,
+				32C1D44221CB05DE00ED1C5D /* ExactLengthRule.swift */,
+				32C1D44321CB05DE00ED1C5D /* ConfirmRule.swift */,
+				32C1D44421CB05DE00ED1C5D /* MinLengthRule.swift */,
+				32C1D44521CB05DE00ED1C5D /* FloatRule.swift */,
+				32C1D44621CB05DE00ED1C5D /* MaxLengthRule.swift */,
+				32C1D44721CB05DE00ED1C5D /* RegexRule.swift */,
+				32C1D44821CB05DE00ED1C5D /* ZipCodeRule.swift */,
+				32C1D44921CB05DE00ED1C5D /* HexColorRule.swift */,
+				32C1D44A21CB05DE00ED1C5D /* EmailRule.swift */,
+				32C1D44B21CB05DE00ED1C5D /* AlphaNumericRule.swift */,
+				32C1D44C21CB05DE00ED1C5D /* PhoneNumberRule.swift */,
+				32C1D44D21CB05DE00ED1C5D /* Rule.swift */,
+				32C1D44E21CB05DE00ED1C5D /* RequiredRule.swift */,
+				32C1D44F21CB05DE00ED1C5D /* IPV4Rule.swift */,
+				32C1D45021CB05DE00ED1C5D /* ValidationRule.swift */,
+				32C1D45121CB05DE00ED1C5D /* AlphaRule.swift */,
+				32C1D45221CB05DE00ED1C5D /* ISBNRule.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
 		32E35EDF21A2584400A9B5B1 = {
 			isa = PBXGroup;
 			children = (
+				32C1D43721CB05DE00ED1C5D /* SwiftValidator */,
+				3248BFE021CAFFD00055E18B /* IQKeyboardManagerSwift */,
 				32E35EEA21A2584400A9B5B1 /* babyhaha */,
 				32E35EE921A2584400A9B5B1 /* Products */,
 				3237AEBE9623468C37F1D298 /* Pods */,
@@ -222,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3248C00121CAFFD00055E18B /* IQKeyboardManager.bundle in Resources */,
 				32E35EF921A2584400A9B5B1 /* LaunchScreen.storyboard in Resources */,
 				32BCFFA321B2C74C002E1A7D /* GoogleService-Info.plist in Resources */,
 				32E35EF621A2584400A9B5B1 /* Assets.xcassets in Resources */,
@@ -319,25 +524,66 @@
 			files = (
 				B90275B721B1DA4800A9EAF1 /* CategoryCell.swift in Sources */,
 				3215904821B42740006C118C /* ItemsCollectionViewCell.swift in Sources */,
+				32C1D46321CB05DE00ED1C5D /* ZipCodeRule.swift in Sources */,
+				32C1D45B21CB05DE00ED1C5D /* CharacterSetRule.swift in Sources */,
 				32942D0321A39C9A00B2A51C /* TabViewController.swift in Sources */,
+				32C1D46621CB05DE00ED1C5D /* AlphaNumericRule.swift in Sources */,
 				B90275BD21B2019100A9EAF1 /* ProfileBundlesCollection.swift in Sources */,
+				32C1D45621CB05DE00ED1C5D /* Validator.swift in Sources */,
+				3248C00721CAFFD00055E18B /* IQUIView+Hierarchy.swift in Sources */,
+				3248C00221CAFFD00055E18B /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				3248C00621CAFFD00055E18B /* IQUITextFieldView+Additions.swift in Sources */,
+				32C1D46721CB05DE00ED1C5D /* PhoneNumberRule.swift in Sources */,
+				32C1D45E21CB05DE00ED1C5D /* ConfirmRule.swift in Sources */,
 				32942CFF21A397AE00B2A51C /* UserViewController.swift in Sources */,
 				32942D0521A60D7E00B2A51C /* AddViewController.swift in Sources */,
 				32942CFB21A3979300B2A51C /* SearchViewController.swift in Sources */,
+				3248BFFF21CAFFD00055E18B /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 				3215904C21B428A3006C118C /* ItemsCollectionView.swift in Sources */,
+				32C1D46221CB05DE00ED1C5D /* RegexRule.swift in Sources */,
 				32E35EEE21A2584400A9B5B1 /* ViewController.swift in Sources */,
+				3248C00421CAFFD00055E18B /* IQUIScrollView+Additions.swift in Sources */,
+				3248BFFE21CAFFD00055E18B /* IQInvocation.swift in Sources */,
+				3248BFFD21CAFFD00055E18B /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				3248BFFB21CAFFD00055E18B /* IQBarButtonItem.swift in Sources */,
+				32C1D46421CB05DE00ED1C5D /* HexColorRule.swift in Sources */,
+				3248BFFA21CAFFD00055E18B /* IQTitleBarButtonItem.swift in Sources */,
+				3248BFFC21CAFFD00055E18B /* IQToolbar.swift in Sources */,
+				32C1D46821CB05DE00ED1C5D /* Rule.swift in Sources */,
 				32E35EF421A2584400A9B5B1 /* babyhaha.xcdatamodeld in Sources */,
+				32C1D46521CB05DE00ED1C5D /* EmailRule.swift in Sources */,
 				32E35EEC21A2584400A9B5B1 /* AppDelegate.swift in Sources */,
+				32C1D46021CB05DE00ED1C5D /* FloatRule.swift in Sources */,
+				32C1D46921CB05DE00ED1C5D /* RequiredRule.swift in Sources */,
 				32DF607121B9CA210031870B /* MapViewController.swift in Sources */,
+				32C1D45921CB05DE00ED1C5D /* ValidationError.swift in Sources */,
 				32942CFD21A397A100B2A51C /* ChatViewController.swift in Sources */,
 				327A223521BEC72000477448 /* SearchTableViewCell.swift in Sources */,
+				32C1D45F21CB05DE00ED1C5D /* MinLengthRule.swift in Sources */,
+				32C1D45C21CB05DE00ED1C5D /* PasswordRule.swift in Sources */,
+				32C1D45721CB05DE00ED1C5D /* ValidationDelegate.swift in Sources */,
 				32D6A4FD21BF3F7100D3231D /* HomeCollectionViewCell.swift in Sources */,
 				B90275BF21B201BD00A9EAF1 /* ProfileBundleCell.swift in Sources */,
+				32C1D46B21CB05DE00ED1C5D /* ValidationRule.swift in Sources */,
+				32C1D46121CB05DE00ED1C5D /* MaxLengthRule.swift in Sources */,
+				3248C00521CAFFD00055E18B /* IQUIViewController+Additions.swift in Sources */,
+				3248C00821CAFFD00055E18B /* IQNSArray+Sort.swift in Sources */,
+				32C1D45821CB05DE00ED1C5D /* Validatable.swift in Sources */,
 				3215904421B42549006C118C /* ItemsViewController.swift in Sources */,
+				3248C00321CAFFD00055E18B /* IQKeyboardManager.swift in Sources */,
 				3215904E21B568EA006C118C /* ChatViewCell.swift in Sources */,
+				3248BFF921CAFFD00055E18B /* IQPreviousNextView.swift in Sources */,
 				32BCFFA521B2CBA7002E1A7D /* Box.swift in Sources */,
+				32C1D46A21CB05DE00ED1C5D /* IPV4Rule.swift in Sources */,
+				3248BFF821CAFFD00055E18B /* IQTextView.swift in Sources */,
 				32E35F0921A2631D00A9B5B1 /* HomeViewController.swift in Sources */,
+				32C1D46C21CB05DE00ED1C5D /* AlphaRule.swift in Sources */,
+				32C1D45D21CB05DE00ED1C5D /* ExactLengthRule.swift in Sources */,
+				32C1D45A21CB05DE00ED1C5D /* FullNameRule.swift in Sources */,
+				3248C00021CAFFD00055E18B /* IQKeyboardManagerConstants.swift in Sources */,
+				32C1D45521CB05DE00ED1C5D /* ValidatorDictionary.swift in Sources */,
 				32D6A4FB21BF3F5B00D3231D /* HomeCollectionView.swift in Sources */,
+				32C1D46D21CB05DE00ED1C5D /* ISBNRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +740,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nyu.babyhaha;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -515,6 +762,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.nyu.babyhaha;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

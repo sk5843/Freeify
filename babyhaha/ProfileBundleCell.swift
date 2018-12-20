@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class ProfileBundleCell: UICollectionViewCell {
@@ -34,6 +37,7 @@ class ProfileBundleCell: UICollectionViewCell {
         boxCollectionViewgl!.reloadData()
         
     }
+    
     
     func startAnimate() {
         let shakeAnimation = CABasicAnimation(keyPath: "transform.rotation")

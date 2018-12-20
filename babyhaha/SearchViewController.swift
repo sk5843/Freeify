@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
+import FirebaseAuth
+import FirebaseDatabase
 
 
 /**
@@ -133,6 +136,7 @@ extension SearchViewController: UISearchBarDelegate{
 
     }
     
+    //Cancel search when cancel button is clicked
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         filteredBundles = []
